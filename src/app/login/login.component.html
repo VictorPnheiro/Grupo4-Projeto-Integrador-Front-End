@@ -1,0 +1,52 @@
+<div class="text-center">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
+    <div class="p-2">
+      <input
+        #emailInput
+        type="email"
+        class="form-control"
+        placeholder="Email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        email
+        [class.is-invalid]="exibeErro('email', form)"
+      />
+      <div *ngIf="exibeErro('email', form)" class="invalid-feedback">
+        Digite um Email válido!
+      </div>
+    </div>
+
+    <div class="p-2">
+      <input
+        #senhaInput
+        type="password"
+        class="form-control"
+        placeholder="Senha"
+        name="senha"
+        [(ngModel)]="senha"
+        required
+        [class.is-invalid]="exibeErro('senha', form)"
+      />
+      <div *ngIf="exibeErro('senha', form)" class="invalid-feedback">
+        Digite uma Senha válida!
+      </div>
+    </div>
+
+    <p *ngIf="erroNoLogin" class="erro-login">Usuário ou senha incorreto.</p>
+
+    <div class="p-2">
+      <button
+        class="btn btn-lg btn-primary btn-block"
+        type="submit"
+        [disabled]="estaLogando"
+      >
+        Entrar
+      </button>
+    </div>
+  </form>
+
+  <div class="spinner-grow text-danger" role="status" *ngIf="estaLogando">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
