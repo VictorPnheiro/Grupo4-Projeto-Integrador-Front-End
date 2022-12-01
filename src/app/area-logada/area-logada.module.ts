@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AreaLogadaRoutingModule } from './area-logada-routing.module';
+import { CadastrarProdutosComponent } from './cadastrar-produtos/cadastrar-produtos.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CadastrarProdutosComponent
+  ],
   imports: [
     CommonModule,
     AreaLogadaRoutingModule
