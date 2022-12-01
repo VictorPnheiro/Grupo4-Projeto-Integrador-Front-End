@@ -1,3 +1,4 @@
+import { CadastrarProdutosComponent } from './cadastrar-produtos/cadastrar-produtos.component';
 import { AreaLogadaComponent } from './area-logada.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';

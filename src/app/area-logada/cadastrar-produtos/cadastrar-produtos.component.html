@@ -1,8 +1,10 @@
-<section class="page-section bg-primary text-white mb-0" id="about">
-  <div class="row justify-content-center">
-    <div class="col-lg-8 col-xl-7">
+<section>
+  <div class="container pt-5">
+    <div class="text-center">
+      <!--  ID  -->
       <form id="contactForm">
-        <div class="form-floating mb-3">
+        <div class="mb-3 form-group">
+          <label for="name">ID</label>
           <input
             class="form-control"
             id="id"
@@ -11,15 +13,12 @@
             data-sb-validations="required"
             data-sb-can-submit="no"
             name="id"
-            [(ngModel)]="produto.id"
           />
-          <label for="name">ID</label>
-          <div class="invalid-feedback" data-sb-feedback="name:required">
-            Digite o ID do produto
-          </div>
         </div>
 
-        <div class="form-floating mb-3">
+        <!--  NOME  -->
+        <div class="mb-3 form-group">
+          <label for="name">Nome do produto</label>
           <input
             class="form-control"
             id="nome"
@@ -28,15 +27,12 @@
             data-sb-validations="required"
             data-sb-can-submit="no"
             name="nome"
-            [(ngModel)]="produto.nome"
           />
-          <label for="name">Nome do produto</label>
-          <div class="invalid-feedback" data-sb-feedback="name:required">
-            Digite o nome do produto
-          </div>
         </div>
 
-        <div class="form-floating mb-3">
+        <!--DESCRIÇÃO-->
+        <div class="mb-3 form-group">
+          <label for="name">Descrição</label>
           <input
             class="form-control"
             id="descricao"
@@ -45,15 +41,12 @@
             data-sb-validations="required"
             data-sb-can-submit="no"
             name="descricao"
-            [(ngModel)]="produto.descricao"
           />
-          <label for="name">Descrição</label>
-          <div class="invalid-feedback" data-sb-feedback="name:required">
-            Digite uma descrição
-          </div>
         </div>
 
-        <div class="form-floating mb-3">
+        <!--VALOR -->
+        <div class="mb-3 form-group">
+          <label for="name">Valor</label>
           <input
             class="form-control"
             id="valor"
@@ -62,15 +55,12 @@
             data-sb-validations="required"
             data-sb-can-submit="no"
             name="valor"
-            [(ngModel)]="produto.valor"
           />
-          <label for="name">Valor</label>
-          <div class="invalid-feedback" data-sb-feedback="name:required">
-            Digite o valor do produto
-          </div>
         </div>
 
-        <div class="form-floating mb-3">
+        <!--QTD ESTOQUE-->
+        <div class="mb-3 form-group">
+          <label for="quantidade">Quantidade em Estoque</label>
           <input
             class="form-control"
             id="quantidade"
@@ -79,36 +69,21 @@
             data-sb-validations="required"
             data-sb-can-submit="no"
             name="quantidade"
-            [(ngModel)]="produto.qtd_estoque"
           />
-          <label for="quantidade">Quantidade em Estoque</label>
-          <div class="invalid-feedback" data-sb-feedback="name:required">
-            Digite a quantidade em estoque
-          </div>
         </div>
 
         <!-- Submit success message-->
-        <div class="d-none" id="submitSuccessMessage">
-          <div class="text-center mb-3">
-            <div class="fw-bolder">Produto cadastro com sucesso!</div>
+        <div>
+          <div>
+            <div>Produto cadastro com sucesso!</div>
           </div>
         </div>
-        <!-- Submit error message-->
 
-        <div class="d-none" id="submitErrorMessage">
-          <div class="text-center text-danger mb-3">
-            [ERRO] Produto cadastrado incorretamente
-          </div>
+        <div id="submitErrorMessage">
+          <div>[ERRO] Produto cadastrado incorretamente</div>
         </div>
         <!-- Submit Button-->
-        <button
-          class="btn btn-primary btn-xl"
-          id="submitButton"
-          type="button"
-          (click)="cadastrar()"
-        >
-          Cadastrar
-        </button>
+        <button id="submitButton" type="button">Cadastrar</button>
       </form>
     </div>
   </div>

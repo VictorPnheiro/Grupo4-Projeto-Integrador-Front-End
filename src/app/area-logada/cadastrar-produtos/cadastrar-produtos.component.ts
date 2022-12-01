@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/shared/interfaces/produto';
-import { ProdutoService } from 'src/shared/produto/produto.service';
+// import { ProdutoService } from 'src/app/shared/services/produto/produto.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class CadastrarProdutosComponent implements OnInit {
 
   // produtoService: Produto[] = []
 
-  constructor(private produtoService: ProdutoService) { }
+  // constructor(private produtoService: ProdutoService) { }
 
   ngOnInit(): void {
     // this.produtos = this.ProdutoService.cadastar()
@@ -23,10 +23,10 @@ export class CadastrarProdutosComponent implements OnInit {
 
   public produto: Produto = {} as Produto;
 
-  public cadastrar(){
-      this.ProdutoService.cadastrar(this.produto)
+  // public cadastrar(){
+  //     this.ProdutoService.cadastrar(this.produto)
   
   }
 
 
-}
+// }

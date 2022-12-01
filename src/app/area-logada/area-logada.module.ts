@@ -7,7 +7,6 @@ import { CadastrarProdutosComponent } from './cadastrar-produtos/cadastrar-produ
 
 @NgModule({
   declarations: [
-    CadastrarProdutosComponent
   ],
   imports: [
     CommonModule,
