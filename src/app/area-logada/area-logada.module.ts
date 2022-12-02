@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,7 +11,8 @@ import { CadastrarProdutosComponent } from './cadastrar-produtos/cadastrar-produ
   ],
   imports: [
     CommonModule,
-    AreaLogadaRoutingModule
+    AreaLogadaRoutingModule,
+    SharedModule
   ]
 })
 export class AreaLogadaModule { }

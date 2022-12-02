@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,13 +8,13 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AreaLogadaComponent } from './area-logada/area-logada.component';
 import { registerLocaleData } from '@angular/common';
-import ptBr from '@angular/common/locales/pt'; 
+import ptBr from '@angular/common/locales/pt';
 
-registerLocaleData(ptBr); 
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [AppComponent, NaoEncontradoComponent, AreaLogadaComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
