@@ -18,6 +18,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./home/home.module').then((m) => m.HomeModule),
       },
+      {
+        path: 'cadastrar-produtos',
+        loadChildren: () =>
+          import('./cadastrar-produtos/cadastrar-produtos.module').then(
+            (m) => m.CadastrarProdutosModule
+          ),
+      },
     ],
   },
 ];

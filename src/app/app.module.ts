@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AreaLogadaComponent } from './area-logada/area-logada.component';
-import { HomeComponent } from './area-logada/home/home.component';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt'; 
 

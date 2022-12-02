@@ -8,10 +8,6 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  {
-    path: 'cadastrar-produtos', 
-    component: CadastrarProdutosComponent
-  }
 ];
 
 @NgModule({
