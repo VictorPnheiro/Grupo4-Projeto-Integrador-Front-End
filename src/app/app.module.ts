@@ -1,4 +1,3 @@
-import { SharedModule } from './shared/shared.module';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +10,7 @@ import { HomeComponent } from './area-logada/home/home.component';
 
 @NgModule({
   declarations: [AppComponent, NaoEncontradoComponent, AreaLogadaComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })
