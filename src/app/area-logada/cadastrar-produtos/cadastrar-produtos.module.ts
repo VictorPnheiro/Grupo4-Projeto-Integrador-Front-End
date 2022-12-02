@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { CadastrarProdutosComponent } from './cadastrar-produtos.component';
 import ptBr from '@angular/common/locales/pt';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
@@ -10,7 +9,7 @@ registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [CadastrarProdutosComponent],
-  imports: [CommonModule, BrowserModule, CadastrarProdutosRoutingModule],
+  imports: [CommonModule, CadastrarProdutosRoutingModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
