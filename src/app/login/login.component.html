@@ -1,52 +1,42 @@
-<div class="text-center">
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
-    <div class="p-2">
-      <input
-        #emailInput
-        type="email"
-        class="form-control"
-        placeholder="Email"
-        name="email"
-        [(ngModel)]="email"
-        required
-        email
-        [class.is-invalid]="exibeErro('email', form)"
-      />
-      <div *ngIf="exibeErro('email', form)" class="invalid-feedback">
-        Digite um Email válido!
+<div class="container">
+  <div id="container-bg">
+    <img src="../../assets/img/bg-login.png" alt="">
+  </div>
+  <div id="container-login" class="text-center">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
+      <h1>Bem Vindo(a)!</h1>
+      <span>Entre com o seu email e senha.</span>
+      <div class="p-2">
+        <div class="input-container">
+          <img class="icon" src="../../assets/icons/email.png" alt="">
+          <input #emailInput type="email" class="form-control input-form" placeholder="Email" name="email" [(ngModel)]="email" required email [class.is-invalid]="exibeErro('email', form)" />
+        </div>
+        <div *ngIf="exibeErro('email', form)" class="invalid-feedback">
+          Digite um Email válido!
+        </div>
       </div>
-    </div>
 
-    <div class="p-2">
-      <input
-        #senhaInput
-        type="password"
-        class="form-control"
-        placeholder="Senha"
-        name="senha"
-        [(ngModel)]="senha"
-        required
-        [class.is-invalid]="exibeErro('senha', form)"
-      />
-      <div *ngIf="exibeErro('senha', form)" class="invalid-feedback">
-        Digite uma Senha válida!
+      <div class="p-2">
+        <div class="input-container">
+          <img class="icon" src="../../assets/icons/senha.png" alt="">
+          <input #senhaInput type="password" class="form-control input-form" placeholder="Senha" name="senha" [(ngModel)]="senha" required [class.is-invalid]="exibeErro('senha', form)" />
+        </div>
+        <div *ngIf="exibeErro('senha', form)" class="invalid-feedback">
+          Digite uma Senha válida!
+        </div>
       </div>
-    </div>
 
-    <p *ngIf="erroNoLogin" class="erro-login">Usuário ou senha incorreto.</p>
+      <p *ngIf="erroNoLogin" class="erro-login">Usuário ou senha incorreto.</p>
 
-    <div class="p-2">
-      <button
-        class="btn btn-lg btn-primary btn-block"
-        type="submit"
-        [disabled]="estaLogando"
-      >
-        Entrar
-      </button>
-    </div>
-  </form>
+      <div class="p-2">
+        <button class="btn btn-lg btn-block btn-success btn-entrar " type="submit" [disabled]="estaLogando">
+          Entrar
+          <span class="spinner-grow spinner-grow-sm float-right" role="status" aria-hidden="true" *ngIf="estaLogando"></span>
+        </button>
 
-  <div class="spinner-grow text-danger" role="status" *ngIf="estaLogando">
-    <span class="visually-hidden">Loading...</span>
+      </div>
+
+    </form>
+
   </div>
 </div>
