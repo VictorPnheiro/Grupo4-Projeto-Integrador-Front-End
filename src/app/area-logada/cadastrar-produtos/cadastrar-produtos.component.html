@@ -4,7 +4,7 @@
       <!--  ID  -->
       <form id="contactForm">
         <div class="mb-3 form-group">
-          <label for="name">ID</label>
+          <label for="id">ID</label>
           <input
             class="form-control"
             id="id"
@@ -18,7 +18,7 @@
 
         <!--  NOME  -->
         <div class="mb-3 form-group">
-          <label for="name">Nome do produto</label>
+          <label for="nome">Nome do produto</label>
           <input
             class="form-control"
             id="nome"
@@ -32,7 +32,7 @@
 
         <!--DESCRIÇÃO-->
         <div class="mb-3 form-group">
-          <label for="name">Descrição</label>
+          <label for="descricao">Descrição</label>
           <input
             class="form-control"
             id="descricao"
@@ -46,7 +46,7 @@
 
         <!--VALOR -->
         <div class="mb-3 form-group">
-          <label for="name">Valor</label>
+          <label for="valor">Valor</label>
           <input
             class="form-control"
             id="valor"
@@ -60,7 +60,7 @@
 
         <!--QTD ESTOQUE-->
         <div class="mb-3 form-group">
-          <label for="quantidade">Quantidade em Estoque</label>
+          <label for="qtd_estoque">Quantidade em Estoque</label>
           <input
             class="form-control"
             id="quantidade"
@@ -108,7 +108,7 @@
         <th scope="row">{{ produto.id }}</th>
         <td>{{ produto.nome }}</td>
         <td>{{ produto.descricao }}</td>
-        <td>{{ produto.valor.toString() | currency: "BRL" }}</td>
+        <td>{{ produto.valor.toString() | currency : "BRL" }}</td>
         <td>{{ produto.qtd_estoque }}</td>
       </tr>
     </tbody>
