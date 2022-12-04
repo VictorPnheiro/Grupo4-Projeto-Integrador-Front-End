@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { ListarClientesComponent } from './area-logada/clientes/listar-clientes/listar-clientes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DetalhesClienteComponent } from './area-logada/clientes/detalhes-cliente/detalhes-cliente.component';
 
 registerLocaleData(ptBr);
 
 @NgModule({
-  declarations: [AppComponent, NaoEncontradoComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  declarations: [AppComponent, NaoEncontradoComponent, ListarClientesComponent, DetalhesClienteComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },

@@ -1,4 +1,3 @@
-import { CadastrarProdutosComponent } from './cadastrar-produtos/cadastrar-produtos.component';
 import { AreaLogadaComponent } from './area-logada.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -23,6 +22,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./cadastrar-produtos/cadastrar-produtos.module').then(
             (m) => m.CadastrarProdutosModule
+          ),
+      },
+      {
+        path: 'clientes',
+        loadChildren: () =>
+          import('./clientes/clientes.module').then(
+            (m) => m.ClientesModule
           ),
       },
     ],
