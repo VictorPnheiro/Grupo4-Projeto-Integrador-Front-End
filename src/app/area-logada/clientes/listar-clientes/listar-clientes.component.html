@@ -1,0 +1,52 @@
+<section class="d-flex flex-column">
+  <div class="container pt-5 d-flex flex-column">
+    <div class="spinner-grow text-danger" role="status" *ngIf="estaCarregando">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+
+    <div *ngIf="erroNoCarregamento">
+      <h2>Ocorreu um erro! :(</h2>
+      <button
+        (click)="carregarClientes()"
+        ype="button"
+        class="btn btn-secondary btn-lg"
+      >
+        Tentar novamente
+      </button>
+    </div>
+
+    <div class="d-grind gap-2 col-2 mx-auto">
+      <button class="btn btn-success btn-sm m-2" (click)="novoCliente()">
+        NOVO CLIENTE
+      </button>
+    </div>
+
+    <div *ngIf="!estaCarregando && !erroNoCarregamento">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>CPF</th>
+            <th>AÇÕES</th>
+          </tr>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.name }}</td>
+            <td>{{ cliente.cpf }}</td>
+            <td>
+              <button
+                class="btn btn-primary btn-sm m-1"
+                (click)="verDetalhes(cliente.id)"
+              >
+                Ver Detalhes
+              </button>
+              <button class="btn btn-warning btn-sm m-1" (click)="editarCliente(cliente.id)">Editar Contato</button>
+              <button class="btn btn-danger btn-sm m-1" (click)="apagarCliente(cliente.id)">Deletar</button>
+            </td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</section>
