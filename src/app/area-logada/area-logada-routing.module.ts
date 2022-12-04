@@ -17,6 +17,20 @@ const routes: Routes = [
         loadChildren: () =>
           import('./home/home.module').then((m) => m.HomeModule),
       },
+      {
+        path: 'cadastrar-produtos',
+        loadChildren: () =>
+          import('./cadastrar-produtos/cadastrar-produtos.module').then(
+            (m) => m.CadastrarProdutosModule
+          ),
+      },
+      {
+        path: 'clientes',
+        loadChildren: () =>
+          import('./clientes/clientes.module').then(
+            (m) => m.ClientesModule
+          ),
+      },
     ],
   },
 ];

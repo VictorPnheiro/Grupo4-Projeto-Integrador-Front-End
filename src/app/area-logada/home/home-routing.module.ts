@@ -1,6 +1,7 @@
 import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastrarProdutosComponent } from '../cadastrar-produtos/cadastrar-produtos.component';
 
 const routes: Routes = [
   {

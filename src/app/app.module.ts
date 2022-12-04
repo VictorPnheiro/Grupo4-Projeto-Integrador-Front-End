@@ -1,17 +1,25 @@
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AreaLogadaComponent } from './area-logada/area-logada.component';
-import { HomeComponent } from './area-logada/home/home.component';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+import { ListarClientesComponent } from './area-logada/clientes/listar-clientes/listar-clientes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DetalhesClienteComponent } from './area-logada/clientes/detalhes-cliente/detalhes-cliente.component';
+
+registerLocaleData(ptBr);
 
 @NgModule({
-  declarations: [AppComponent, NaoEncontradoComponent, AreaLogadaComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
-  providers: [],
+  declarations: [AppComponent, NaoEncontradoComponent, ListarClientesComponent, DetalhesClienteComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt' },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

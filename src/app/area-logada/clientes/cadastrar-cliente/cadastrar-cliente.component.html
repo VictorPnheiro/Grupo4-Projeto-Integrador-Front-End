@@ -1,0 +1,186 @@
+<section class="d-flex flex-column">
+  <div class="container pt-5 d-flex flex-column">
+    <div class="text-center" *ngIf="estaCarregando">
+      <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <div *ngIf="erroNoCarregamento">
+      <h2>Ocorreu um erro! :(</h2>
+      <button
+        (click)="carregarCliente()"
+        type="button"
+        class="btn btn-secondary btn-lg"
+      >
+        Tentar novamente
+      </button>
+    </div>
+
+    <div *ngIf="!estaCarregando && !erroNoCarregamento">
+      <!-- ID -->
+      <form [formGroup]="clienteForm">
+        <div class="mb-3 form-group">
+          <label for="id">ID</label>
+          <input
+            type="number"
+            class="form-control"
+            id="id"
+            placeholder="ID"
+            formControlName="id"
+            [class.is-invalid]="exibeErro('id')"
+          />
+        </div>
+        <!-- NOME -->
+        <div class="form-group mb-3">
+          <label for="name">Nome do cliente</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            placeholder="Nome"
+            formControlName="name"
+            [class.is-invalid]="exibeErro('name')"
+          />
+        </div>
+
+        <!-- TELEFONE -->
+
+        <div class="mb-3 form-group">
+          <label for="telefone">Telefone</label>
+          <input
+            type="number"
+            class="form-control"
+            id="telefone"
+            placeholder="Telefone"
+            formControlName="telefone"
+            [class.is-invalid]="exibeErro('telefone')"
+          />
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="mb-3 form-group">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="E-mail"
+            formControlName="email"
+            [class.is-invalid]="exibeErro('email')"
+          />
+        </div>
+
+        <!-- CPF -->
+
+        <div class="mb-3 form-group">
+          <label for="cpf">CPF</label>
+          <input
+            type="number"
+            class="form-control"
+            id="cpf"
+            placeholder="CPF"
+            formControlName="cpf"
+            [class.is-invalid]="exibeErro('cpf')"
+          />
+        </div>
+
+        <!-- CEP -->
+
+        <div class="mb-3 form-group">
+          <label for="cep">CEP</label>
+          <input
+            class="form-control"
+            id="cep"
+            type="number"
+            placeholder="CEP"
+            formControlName="cep"
+            [class.is-invalid]="exibeErro('cep')"
+          />
+        </div>
+
+        <!-- LOGRADOURO -->
+        <div class="mb-3 form-group">
+          <label for="logradouro">Endereço</label>
+          <input
+            class="form-control"
+            id="logradouro"
+            type="text"
+            placeholder="Endereço"
+            formControlName="logradouro"
+            [class.is-invalid]="exibeErro('logradouro')"
+          />
+        </div>
+
+        <!-- NUMERO -->
+
+        <div class="mb-3 form-group">
+          <label for="numero">Número</label>
+          <input
+            class="form-control"
+            id="numero"
+            type="number"
+            placeholder="Numero"
+            formControlName="numero"
+            [class.is-invalid]="exibeErro('numero')"
+          />
+        </div>
+
+        <!-- BAIRRO -->
+        <div class="mb-3 form-group">
+          <label for="bairro">Bairro</label>
+          <input
+            class="form-control"
+            id="bairro"
+            type="text"
+            placeholder="Bairro"
+            formControlName="bairro"
+            [class.is-invalid]="exibeErro('bairro')"
+          />
+        </div>
+
+        <!-- CIDADE -->
+        <div class="mb-3 form-group">
+          <label for="cidade">Cidade</label>
+          <input
+            class="form-control"
+            id="cidade"
+            type="text"
+            placeholder="Cidade"
+            formControlName="cidade"
+            [class.is-invalid]="exibeErro('cidade')"
+          />
+        </div>
+
+        <!-- ESTADO -->
+        <div class="mb-3 form-group">
+          <label for="estado">Estado</label>
+          <input
+            class="form-control"
+            id="estado"
+            type="text"
+            placeholder="Estado"
+            formControlName="estado"
+            [class.is-invalid]="exibeErro('estado')"
+          />
+        </div>
+
+        <!-- COMPLEMENTO -->
+        <div class="mb-3 form-group">
+          <label for="complemento">Complemeto</label>
+          <input
+            class="form-control"
+            id="complemento"
+            type="text"
+            placeholder="Complemento "
+            formControlName="complemento"
+          />
+        </div>
+        <button class="btn btn-success" (click)="onSubmit()">
+          {{ estaAlterando() ? "Atualizar Cliente" : "Criar Cliente " }}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
