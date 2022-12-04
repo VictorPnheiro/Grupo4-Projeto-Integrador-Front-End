@@ -35,8 +35,8 @@ export class CadastrarClienteComponent implements OnInit {
 
   inicializaForm() {
     this.clienteForm = this.formBuilder.group({
-      name: ['', Validators.required],
       id: ['', Validators.required],
+      name: ['', Validators.required],
       telefone: ['', Validators.required],
       email: ['', Validators.required],
       cpf: ['', Validators.required],
@@ -52,6 +52,17 @@ export class CadastrarClienteComponent implements OnInit {
 
   estaAlterando = () => Boolean(this.idCliente);
 
+  exibeErro(nomeControle: string) {
+    if (!this.clienteForm.get(nomeControle)) {
+      return false;
+    }
+
+    return (
+      this.clienteForm.controls[nomeControle].invalid &&
+      this.clienteForm.controls[nomeControle].touched
+    );
+  }
+
   carregarCliente() {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
@@ -66,7 +77,7 @@ export class CadastrarClienteComponent implements OnInit {
       )
       .subscribe({
         next: (resposta: Cliente) => this.onSucessoCarregarCliente(resposta),
-        error: (erro) => this.onErroCarregarContato(erro),
+        error: (erro) => this.onErroCarregarCliente(erro),
       });
   }
 
@@ -74,7 +85,7 @@ export class CadastrarClienteComponent implements OnInit {
     this.clienteForm.patchValue(resposta);
   }
 
-  onErroCarregarContato(erro: any) {
+  onErroCarregarCliente(erro: any) {
     this.erroNoCarregamento = true;
     console.log(erro);
   }

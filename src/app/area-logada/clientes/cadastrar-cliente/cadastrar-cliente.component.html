@@ -28,9 +28,9 @@
             id="id"
             placeholder="ID"
             formControlName="id"
+            [class.is-invalid]="exibeErro('id')"
           />
         </div>
-
         <!-- NOME -->
         <div class="form-group mb-3">
           <label for="name">Nome do cliente</label>
@@ -40,6 +40,7 @@
             id="nome"
             placeholder="Nome"
             formControlName="name"
+            [class.is-invalid]="exibeErro('name')"
           />
         </div>
 
@@ -53,6 +54,7 @@
             id="telefone"
             placeholder="Telefone"
             formControlName="telefone"
+            [class.is-invalid]="exibeErro('telefone')"
           />
         </div>
 
@@ -66,6 +68,7 @@
             id="email"
             placeholder="E-mail"
             formControlName="email"
+            [class.is-invalid]="exibeErro('email')"
           />
         </div>
 
@@ -79,6 +82,7 @@
             id="cpf"
             placeholder="CPF"
             formControlName="cpf"
+            [class.is-invalid]="exibeErro('cpf')"
           />
         </div>
 
@@ -92,6 +96,7 @@
             type="number"
             placeholder="CEP"
             formControlName="cep"
+            [class.is-invalid]="exibeErro('cep')"
           />
         </div>
 
@@ -104,6 +109,7 @@
             type="text"
             placeholder="Endereço"
             formControlName="logradouro"
+            [class.is-invalid]="exibeErro('logradouro')"
           />
         </div>
 
@@ -117,6 +123,7 @@
             type="number"
             placeholder="Numero"
             formControlName="numero"
+            [class.is-invalid]="exibeErro('numero')"
           />
         </div>
 
@@ -129,6 +136,7 @@
             type="text"
             placeholder="Bairro"
             formControlName="bairro"
+            [class.is-invalid]="exibeErro('bairro')"
           />
         </div>
 
@@ -141,6 +149,7 @@
             type="text"
             placeholder="Cidade"
             formControlName="cidade"
+            [class.is-invalid]="exibeErro('cidade')"
           />
         </div>
 
@@ -153,6 +162,7 @@
             type="text"
             placeholder="Estado"
             formControlName="estado"
+            [class.is-invalid]="exibeErro('estado')"
           />
         </div>
 
@@ -168,8 +178,7 @@
           />
         </div>
         <button class="btn btn-success" (click)="onSubmit()">
-          
-          {{ estaAlterando() ? "Salvar Cliente" : "Criar Cliente " }}
+          {{ estaAlterando() ? "Atualizar Cliente" : "Criar Cliente " }}
         </button>
       </form>
     </div>
