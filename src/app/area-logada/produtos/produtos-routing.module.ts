@@ -7,8 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-  path: '',
-  component: ListarProdutosComponent
+    path: '',
+    component: ListarProdutosComponent
   },
   {
     path: 'novo-produto',
@@ -28,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CadastrarProdutoRoutingModule { }
+export class ProdutosRoutingModule { }
