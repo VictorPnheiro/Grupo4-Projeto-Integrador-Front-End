@@ -1,0 +1,89 @@
+<!-- Tela de Carregamento | Validação -->
+
+<section class="d-flex flex-column">
+  <div class="container pt-5 d-flex flex-column">
+    <div class="text-center" *ngIf="estaCarregando">
+      <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div *ngIf="erroNoCarregamento">
+      <h2>Ocorreu um erro! :(</h2>
+      <button
+        (click)="carregarProduto()"
+        type="button"
+        class="btn btn-secondary btn-lg"
+      >
+        Tentar Novamente
+      </button>
+    </div>
+    <div *ngIf="!estaCarregando && !erroNoCarregamento"></div>
+
+    <!--  ID  -->
+    <form [formGroup]="productForm">
+      <div class="mb-3 form-group">
+        <label for="id">ID</label>
+        <input
+          class="form-control"
+          id="id"
+          type="number"
+          placeholder="ID"
+          formControlName="id"
+        />
+      </div>
+
+      <!--  NOME  -->
+      <div class="mb-3 form-group">
+        <label for="name">Nome do produto</label>
+        <input
+          class="form-control"
+          id="name"
+          type="text"
+          placeholder="Digite o nome do produto"
+          formControlName="name"
+        />
+      </div>
+
+      <!--DESCRIÇÃO-->
+      <div class="mb-3 form-group">
+        <label for="description">Descrição</label>
+        <input
+          class="form-control"
+          id="description"
+          type="text"
+          placeholder="Digite uma descrição"
+          formControlName="description"
+        />
+      </div>
+
+      <!--VALOR -->
+      <div class="mb-3 form-group">
+        <label for="price">Valor</label>
+        <input
+          class="form-control"
+          id="price"
+          type="number"
+          placeholder="Digite valor do produto"
+          formControlName="price"
+        />
+      </div>
+
+      <!--QTD ESTOQUE-->
+      <div class="mb-3 form-group">
+        <label for="quantity">Quantidade em Estoque</label>
+        <input
+          class="form-control"
+          id="quantity"
+          type="number"
+          placeholder="Quantidade de produtos em estoque"
+          formControlName="quantity"
+        />
+      </div>
+
+      <!-- Botão -->
+      <button class="btn btn-success" (click)="onSubmit()">
+        {{ alterandoProduto() ? "Salvar Produto" : "Cadastrar Produto" }}
+      </button>
+    </form>
+  </div>
+</section>

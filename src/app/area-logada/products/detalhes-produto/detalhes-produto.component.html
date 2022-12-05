@@ -1,0 +1,30 @@
+<!-- Tela de Carregamento | Validação -->
+
+<section class="d-flex flex-column">
+  <div class="container pt-5 d-flex flex-column">
+    <div class="text-center" *ngIf="estaCarregando">
+      <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div *ngIf="erroNoCarregamento">
+      <h2>Ocorreu um erro! :(</h2>
+      <button
+        (click)="carregarProduto()"
+        type="button"
+        class="btn btn-secondary btn-lg"
+      >
+        Tentar Novamente
+      </button>
+    </div>
+    <div *ngIf="!estaCarregando && !erroNoCarregamento">
+      <p>ID: <b></b>{{ product.id }}</p>
+      <p>Nome: <b></b>{{ product.name }}</p>
+      <p>Descrição: <b></b>{{ product.description }}</p>
+      <p>Valor: <b></b>{{ product.price }}</p>
+      <p>Estoque: <b></b>{{ product.quantity }}</p>
+
+      <button class="btn btn-secondary" (click)="voltar()">Voltar</button>
+    </div>
+  </div>
+</section>

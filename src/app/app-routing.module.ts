@@ -23,6 +23,9 @@ const routes: Routes = [
     path: '**',
     component: NaoEncontradoComponent,
   },
+
+
+  
 ];
 
 @NgModule({
