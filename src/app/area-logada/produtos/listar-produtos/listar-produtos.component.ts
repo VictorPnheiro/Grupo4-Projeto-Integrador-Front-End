@@ -45,12 +45,12 @@ export class ListarProdutosComponent implements OnInit {
   }
 
   onErro(erro: any){
-    this.erroNoCarregamento = true;
+    // this.erroNoCarregamento = true; -> Validar se precisa
     console.log(erro)
   }
 
   novoProduto(){
-    this.router.navigate([`produtos/novo-produto`]);
+    this.router.navigate(['produtos/novo-produto']);
   }
 
   verDetalhes(idProduto: any){

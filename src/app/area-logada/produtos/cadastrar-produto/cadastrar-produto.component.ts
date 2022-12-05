@@ -63,14 +63,14 @@ export class CadastrarProdutoComponent implements OnInit{
         });
       }   
 
-  onSucessoCarregarProduto(resposta: Produto){
-    this.produtoForm.patchValue(resposta);
-  }
+    onSucessoCarregarProduto(resposta: Produto){
+      this.produtoForm.patchValue(resposta);
+    }
 
-  onErroCarregarProduto(erro: any){
-    this.erroNoCarregamento = true;
-    // console.log(erro)
-  }
+    onErroCarregarProduto(erro: any){
+      this.erroNoCarregamento = true;
+      console.log(erro)
+    }
 
   validarCampos(){
     Object.keys(this.produtoForm.controls).forEach((campo) => {

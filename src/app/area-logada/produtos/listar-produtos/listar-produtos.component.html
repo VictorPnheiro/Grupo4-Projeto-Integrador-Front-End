@@ -3,10 +3,9 @@
 <section class="d-flex flex-column">
   <div class="container pt-5 d-flex flex-column">
     <div class="text-center" *ngIf="estaCarregando">
-      <div class="spinner-grow text-danger" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
+      <span class="visually-hidden">Loading...</span>
     </div>
+
     <div *ngIf="erroNoCarregamento">
       <h2>Ocorreu um erro! :(</h2>
       <button

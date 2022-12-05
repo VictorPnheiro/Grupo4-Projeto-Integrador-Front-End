@@ -2,7 +2,6 @@ import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { Produto } from 'src/app/area-logada/produtos/produto.interface';
 import { HttpClient } from '@angular/common/http';
-import { AnimateTimings } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
