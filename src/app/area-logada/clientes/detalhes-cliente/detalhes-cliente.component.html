@@ -1,0 +1,31 @@
+<div class="container text-center p-5">
+  <div class="spinner-grow text-danger" role="status" *ngIf="estaCarregando">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div *ngIf="erroNoCarregamento">
+    <h2>Ocorreu um erro! :(</h2>
+    <button
+      (click)="carregarContato()"
+      type="button"
+      class="btn btn-secondary btn-lg"
+    >
+      Tentar novamente
+    </button>
+  </div>
+  <div *ngIf="!estaCarregando && !erroNoCarregamento">
+    <p><b>ID:</b> {{ cliente.id }}</p>
+    <p><b>Nome:</b> {{ cliente.name }}</p>
+    <p><b>Telefone</b> {{ cliente.telefone }}</p>
+    <p><b>E-mail</b> {{ cliente.email }}</p>
+    <p><b>CPF:</b> {{ cliente.cpf }}</p>
+    <p><b>CEP:</b> {{ cliente.cep }}</p>
+    <p><b>Endereço:</b> {{ cliente.logradouro }}</p>
+    <p><b>Número:</b> {{ cliente.numero }}</p>
+    <p><b>Bairro:</b> {{ cliente.bairro }}</p>
+    <p><b>Cidade:</b> {{ cliente.cidade }}</p>
+    <p><b>Estado:</b> {{ cliente.estado }}</p>
+    <p><b>Completo:</b> {{ cliente.complemento }}</p>
+
+    <button class="btn btn-secondary" (click)="voltar()">Voltar</button>
+  </div>
+</div>
