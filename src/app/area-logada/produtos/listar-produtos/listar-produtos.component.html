@@ -1,0 +1,66 @@
+<!-- Tela de Carregamento | Validação -->
+
+<section class="d-flex flex-column">
+  <div class="container pt-5 d-flex flex-column">
+    <div class="text-center" *ngIf="estaCarregando">
+      <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div *ngIf="erroNoCarregamento">
+      <h2>Ocorreu um erro! :(</h2>
+      <button
+        (click)="carregarProduto()"
+        type="button"
+        class="btn btn-secondary btn-lg"
+      >
+        Tentar Novamente
+      </button>
+    </div>
+
+    <!-- Botão para adicionar novo Produto -->
+    <div class="d-grid gap-2 col-2 mx-auto">
+      <button class="btn btn-success btn-sm m-2" (click)="novoProduto()">
+        NOVO PRODUTO
+      </button>
+    </div>
+
+    <!-- Tabebla listando Produtos -->
+    <div *ngIf="!estaCarregando && !erroNoCarregamento">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>NOME</th>
+            <th>VALOR</th>
+            <th>ESTOQUE</th>
+          </tr>
+          <tr *ngFor="let produto of produtos">
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.valor }}</td>
+            <td>{{ produto.qtd_estoque }}</td>
+            <td>
+              <button
+                class="btn btn-primary btn-sm m-1"
+                (click)="verDetalhes(produto.id)"
+              >
+                Ver Detalhes
+              </button>
+              <button
+                class="btn btn-warning btn-sm m-1"
+                (click)="editarProduto(produto.id)"
+              >
+                Editar Produto
+              </button>
+              <button
+                class="btn btn-warning btn-sm m-1"
+                (click)="apagarProduto(produto.id)"
+              >
+                Deletar
+              </button>
+            </td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</section>

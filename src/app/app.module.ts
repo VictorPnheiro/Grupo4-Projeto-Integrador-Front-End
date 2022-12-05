@@ -8,10 +8,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 
+
 registerLocaleData(ptBr);
 
 @NgModule({
-  declarations: [AppComponent, NaoEncontradoComponent],
+  declarations: [AppComponent, NaoEncontradoComponent, ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
