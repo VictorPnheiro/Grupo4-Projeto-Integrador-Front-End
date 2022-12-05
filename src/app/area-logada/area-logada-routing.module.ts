@@ -18,10 +18,10 @@ const routes: Routes = [
           import('./home/home.module').then((m) => m.HomeModule),
       },
       {
-        path: 'produtos',
+        path: 'products',
         loadChildren: () =>
-          import('./produtos/produtos.module').then(
-            (m) => m.ProdutosModule
+          import('./products/products.module').then(
+            (m) => m.ProductsModule
           ),
       },
     ],

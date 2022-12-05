@@ -1,7 +1,7 @@
-import { ProdutosService } from './../produtos.service';
+import { ProductsService } from '../products.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Produto } from '../produto.interface';
+import { Product } from '../product.interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take, finalize } from 'rxjs';
 
@@ -11,14 +11,14 @@ import { take, finalize } from 'rxjs';
   styleUrls: ['./cadastrar-produto.component.css']
 })
 export class CadastrarProdutoComponent implements OnInit{
-  idProduto: String | null;
-  produtoForm: FormGroup;
+  idProduct: String | null;
+  productForm: FormGroup;
 
   estaCarregando: boolean;
   erroNoCarregamento: boolean;
 
   constructor(
-    private produtosService: ProdutosService,
+    private productsService: ProductsService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder
@@ -27,14 +27,14 @@ export class CadastrarProdutoComponent implements OnInit{
     ngOnInit(): void {
      this.inicializaForm();
 
-     this.idProduto = this.activatedRoute.snapshot.paramMap.get('id');
-     if(this.idProduto){
+     this.idProduct = this.activatedRoute.snapshot.paramMap.get('id');
+     if(this.idProduct){
       this.carregarProduto();
      }
     }
 
     inicializaForm(){
-      this.produtoForm = this.formBuilder.group({
+      this.productForm = this.formBuilder.group({
         id:['', Validators.required],
         name:['', Validators.required],
         description:['',Validators.required],
@@ -43,28 +43,28 @@ export class CadastrarProdutoComponent implements OnInit{
       });
     }
 
-    alterandoProduto = () => Boolean(this.idProduto);
+    alterandoProduto = () => Boolean(this.idProduct);
 
     carregarProduto(){
       this.estaCarregando = true;
       this.erroNoCarregamento = false;
 
-      const idProduto = this.activatedRoute.snapshot.paramMap.get('id');
+      const idProduct = this.activatedRoute.snapshot.paramMap.get('id');
 
-      this.produtosService
-        .pegarProdutoId(idProduto)
+      this.productsService
+        .pegarProdutoId(idProduct)
         .pipe(
           take(1),
           finalize(() => (this.estaCarregando = false))
         )
         .subscribe({
-          next:(resposta: Produto) => this.onSucessoCarregarProduto(resposta),
+          next:(resposta: Product) => this.onSucessoCarregarProduto(resposta),
           error:(erro) => this.onErroCarregarProduto(erro),
         });
       }   
 
-    onSucessoCarregarProduto(resposta: Produto){
-      this.produtoForm.patchValue(resposta);
+    onSucessoCarregarProduto(resposta: Product){
+      this.productForm.patchValue(resposta);
     }
 
     onErroCarregarProduto(erro: any){
@@ -73,14 +73,14 @@ export class CadastrarProdutoComponent implements OnInit{
     }
 
   validarCampos(){
-    Object.keys(this.produtoForm.controls).forEach((campo) => {
-      const controle = this.produtoForm.get(campo);
+    Object.keys(this.productForm.controls).forEach((campo) => {
+      const controle = this.productForm.get(campo);
       controle?.markAsTouched();
     });
   }
 
   onSubmit(){
-    if(this.produtoForm.invalid){
+    if(this.productForm.invalid){
       this.validarCampos();
       return;
     }
@@ -92,8 +92,8 @@ export class CadastrarProdutoComponent implements OnInit{
   }
 
   salvarProduto(){
-    this.produtosService
-      .alterarProduto(this.idProduto, this.produtoForm.value)
+    this.productsService
+      .alterarProduto(this.idProduct, this.productForm.value)
       .subscribe({
         next: () => this.onSucessoSalvarProduto(),
         error: () => this.onErroSalvarProduto(),
@@ -102,7 +102,7 @@ export class CadastrarProdutoComponent implements OnInit{
 
   onSucessoSalvarProduto(){
     alert('Produto atualizado com sucesso!');
-    this.router.navigate(['produtos']);
+    this.router.navigate(['products']);
   };
 
   onErroSalvarProduto(){
@@ -110,7 +110,7 @@ export class CadastrarProdutoComponent implements OnInit{
   };
 
   cadastrarProduto(){
-    this.produtosService.cadastrarProduto(this.produtoForm.value).subscribe({
+    this.productsService.cadastrarProduto(this.productForm.value).subscribe({
       next: () => this.onSucessoCadastrarProduto(),
       error: () => this.onErroCadastrarProduto(),
     });
@@ -118,7 +118,7 @@ export class CadastrarProdutoComponent implements OnInit{
 
   onSucessoCadastrarProduto(){
     alert('Produto castrado com sucesso!');
-    this.router.navigate(['produtos']);
+    this.router.navigate(['products']);
   };
 
   onErroCadastrarProduto(){

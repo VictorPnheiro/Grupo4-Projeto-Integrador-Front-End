@@ -1,4 +1,4 @@
-import { ProdutosRoutingModule } from './produtos-routing.module';
+import { ProductsRoutingModule } from './products-routing.module';
 import ptBr from '@angular/common/locales/pt';
 
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
@@ -10,10 +10,10 @@ registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [CadastrarProdutoComponent],
-  imports: [CommonModule, ProdutosRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, ProductsRoutingModule, ReactiveFormsModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
   ],
 })
-export class ProdutosModule {}
+export class ProductsModule {}

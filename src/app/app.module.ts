@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
-import { DetalhesProdutoComponent } from './area-logada/produtos/detalhes-produto/detalhes-produto.component';
-import { ListarProdutosComponent } from './area-logada/produtos/listar-produtos/listar-produtos.component';
+import { DetalhesProdutoComponent } from './area-logada/products/detalhes-produto/detalhes-produto.component';
+import { ListarProdutosComponent } from './area-logada/products/listar-produtos/listar-produtos.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';

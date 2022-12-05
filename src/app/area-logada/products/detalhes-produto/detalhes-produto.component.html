@@ -18,11 +18,11 @@
       </button>
     </div>
     <div *ngIf="!estaCarregando && !erroNoCarregamento">
-      <p>ID: <b></b>{{ produto.id }}</p>
-      <p>Nome: <b></b>{{ produto.nome }}</p>
-      <p>Descrição: <b></b>{{ produto.descricao }}</p>
-      <p>Valor: <b></b>{{ produto.valor }}</p>
-      <p>Estoque: <b></b>{{ produto.qtd_estoque }}</p>
+      <p>ID: <b></b>{{ product.id }}</p>
+      <p>Nome: <b></b>{{ product.name }}</p>
+      <p>Descrição: <b></b>{{ product.description }}</p>
+      <p>Valor: <b></b>{{ product.price }}</p>
+      <p>Estoque: <b></b>{{ product.quantity }}</p>
 
       <button class="btn btn-secondary" (click)="voltar()">Voltar</button>
     </div>

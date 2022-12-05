@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { take, finalize } from 'rxjs';
-import { Produto } from '../produto.interface';
-import { ProdutosService } from '../produtos.service';
+import { Product } from '../product.interface';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-listar-produtos',
@@ -10,14 +10,14 @@ import { ProdutosService } from '../produtos.service';
   styleUrls: ['./listar-produtos.component.css']
 })
 export class ListarProdutosComponent implements OnInit {
-  produtos: Array<Produto>;
+  products: Array<Product>;
 
   estaCarregando: boolean;
   erroNoCarregamento: boolean;
 
   constructor(
     private router: Router,
-    private produtosService: ProdutosService,
+    private productsService: ProductsService,
   ) {}
 
   ngOnInit(){
@@ -28,7 +28,7 @@ export class ListarProdutosComponent implements OnInit {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
 
-    this.produtosService
+    this.productsService
       .pegarProduto()
       .pipe(
         take(1),
@@ -40,8 +40,8 @@ export class ListarProdutosComponent implements OnInit {
       });
   }
 
-  onSucesso(resposta: Produto[]){
-    this.produtos = resposta;
+  onSucesso(resposta: Product[]){
+    this.products = resposta;
   }
 
   onErro(erro: any){
@@ -50,28 +50,28 @@ export class ListarProdutosComponent implements OnInit {
   }
 
   novoProduto(){
-    this.router.navigate(['produtos/novo-produto']);
+    this.router.navigate(['products/new-product']);
   }
 
-  verDetalhes(idProduto: any){
-    this.router.navigate([`produtos/${idProduto}`])
+  verDetalhes(idProduct: any){
+    this.router.navigate([`products/${idProduct}`])
   }
 
-  editarProduto(idProduto: Number){
-    this.router.navigate([`produtos/${idProduto}/editar`])
+  editarProduto(idProduct: Number){
+    this.router.navigate([`products/${idProduct}/editar`])
   }
 
-  apagarProduto(idProduto: Number){
-    this.produtosService
-      .apagarProduto(idProduto)
+  apagarProduto(idProduct: Number){
+    this.productsService
+      .apagarProduto(idProduct)
       .subscribe({
-        next: () => this.onSucessoApagarProduto(idProduto),
+        next: () => this.onSucessoApagarProduto(idProduct),
         error: () => this.onErroApagarProduto(),
       });
   }
   
-  onSucessoApagarProduto(idProduto: Number){
-    this.produtos = this.produtos?.filter((produtos) => produtos.id != idProduto)
+  onSucessoApagarProduto(idProduct: Number){
+    this.products = this.products?.filter((products) => products.id != idProduct)
     alert('Produto deletado com sucesso')
   }
 

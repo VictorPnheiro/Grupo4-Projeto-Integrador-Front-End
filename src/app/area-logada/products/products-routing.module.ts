@@ -11,7 +11,7 @@ const routes: Routes = [
     component: ListarProdutosComponent,
   },
   {
-    path: 'novo-produto',
+    path: 'new-product',
     component: CadastrarProdutoComponent,
   },
   {
@@ -28,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ProdutosRoutingModule { }
+export class ProductsRoutingModule { }

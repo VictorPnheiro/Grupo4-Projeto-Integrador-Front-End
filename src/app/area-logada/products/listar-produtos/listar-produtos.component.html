@@ -33,26 +33,26 @@
             <th>VALOR</th>
             <th>ESTOQUE</th>
           </tr>
-          <tr *ngFor="let produto of produtos">
-            <td>{{ produto.nome }}</td>
-            <td>{{ produto.valor }}</td>
-            <td>{{ produto.qtd_estoque }}</td>
+          <tr *ngFor="let product of products">
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
             <td>
               <button
                 class="btn btn-primary btn-sm m-1"
-                (click)="verDetalhes(produto.id)"
+                (click)="verDetalhes(product.id)"
               >
                 Ver Detalhes
               </button>
               <button
                 class="btn btn-warning btn-sm m-1"
-                (click)="editarProduto(produto.id)"
+                (click)="editarProduto(product.id)"
               >
                 Editar Produto
               </button>
               <button
                 class="btn btn-warning btn-sm m-1"
-                (click)="apagarProduto(produto.id)"
+                (click)="apagarProduto(product.id)"
               >
                 Deletar
               </button>

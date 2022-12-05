@@ -20,7 +20,7 @@
     <div *ngIf="!estaCarregando && !erroNoCarregamento"></div>
 
     <!--  ID  -->
-    <form [formGroup]="produtoForm">
+    <form [formGroup]="productForm">
       <div class="mb-3 form-group">
         <label for="id">ID</label>
         <input
@@ -37,7 +37,7 @@
         <label for="name">Nome do produto</label>
         <input
           class="form-control"
-          id="nome"
+          id="name"
           type="text"
           placeholder="Digite o nome do produto"
           formControlName="name"
@@ -49,7 +49,7 @@
         <label for="description">Descrição</label>
         <input
           class="form-control"
-          id="descricao"
+          id="description"
           type="text"
           placeholder="Digite uma descrição"
           formControlName="description"
@@ -63,7 +63,7 @@
           class="form-control"
           id="price"
           type="number"
-          placeholder="Digite o valor do produto"
+          placeholder="Digite valor do produto"
           formControlName="price"
         />
       </div>
@@ -81,12 +81,7 @@
       </div>
 
       <!-- Botão -->
-      <button
-        class="btn btn-success"
-        id="submitButton"
-        type="button"
-        (click)="onSubmit()"
-      >
+      <button class="btn btn-success" (click)="onSubmit()">
         {{ alterandoProduto() ? "Salvar Produto" : "Cadastrar Produto" }}
       </button>
     </form>

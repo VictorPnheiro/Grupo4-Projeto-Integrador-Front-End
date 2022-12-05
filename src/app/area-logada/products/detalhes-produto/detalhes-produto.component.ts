@@ -1,7 +1,7 @@
-import { ProdutosService } from './../produtos.service';
+import { ProductsService } from '../products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Produto } from '../produto.interface';
+import { Product } from '../product.interface';
 import { take, finalize } from 'rxjs';
 
 @Component({
@@ -11,14 +11,14 @@ import { take, finalize } from 'rxjs';
 })
 export class DetalhesProdutoComponent implements OnInit {
 
-  produto: Produto;
+  product: Product;
 
   estaCarregando: boolean;
   erroNoCarregamento: boolean;
 
   constructor(
     private ActivatedRoute: ActivatedRoute,
-    private produtosService: ProdutosService,
+    private productsService: ProductsService,
     private router: Router,
   ) {}
 
@@ -30,23 +30,23 @@ export class DetalhesProdutoComponent implements OnInit {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
 
-    const idProduto = this.ActivatedRoute.snapshot.paramMap.get('id');
+    const idProduct = this.ActivatedRoute.snapshot.paramMap.get('id');
 
-    this.produtosService
-    .pegarProdutoId(idProduto)
+    this.productsService
+    .pegarProdutoId(idProduct)
     .pipe(
       take(1),
       finalize(() => (this.estaCarregando = false))
     )
     .subscribe({
-      next:(resposta: Produto) => this.onSucesso(resposta),
+      next:(resposta: Product) => this.onSucesso(resposta),
       error:(erro) => this.onErro(erro),
     });
   }   
 
-  onSucesso(resposta: Produto){
+  onSucesso(resposta: Product){
     {
-      this.produto = resposta;
+      this.product = resposta;
     }
   }
 
@@ -58,6 +58,6 @@ export class DetalhesProdutoComponent implements OnInit {
   }
 
   voltar(){
-    this.router.navigate(['produtos'])
+    this.router.navigate(['products'])
   }
 }
