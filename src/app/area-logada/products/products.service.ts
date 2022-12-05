@@ -28,7 +28,8 @@ export class ProductsService {
   }
 
   apagarProduto(idProduct: Number){
-    return this.http.delete<Product[]>(`${this.API_URL}products/${idProduct}`);
+    return this.http.delete<Product[]>(`${this.API_URL}/products/${idProduct}`);
+    // return this.http.delete<Product[]>(`${this.API_URL}products/${idProduct}`);
   }
 
 }
