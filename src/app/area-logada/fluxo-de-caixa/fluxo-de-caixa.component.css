@@ -1,0 +1,5 @@
+.table thead th,
+.table td,
+.table th {
+  vertical-align: middle;
+}
