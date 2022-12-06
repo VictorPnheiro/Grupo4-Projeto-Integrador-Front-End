@@ -14,6 +14,7 @@ export class ListarClientesComponent implements OnInit {
 
   estaCarregando: boolean;
   erroNoCarregamento: boolean;
+  pagina = 1;
 
   constructor(
     private router: Router,
@@ -76,5 +77,15 @@ export class ListarClientesComponent implements OnInit {
 
   onErroApagarCliente(){
     alert('Ocorreu um erro ao tentar deletar cliente!')
+  }
+
+  proximaPagina() {
+    this.pagina = this.pagina + 1;
+    // implementar lógica de paginação
+  }
+
+  paginaAnterior() {
+    this.pagina = this.pagina - 1;
+    // implementar lógica de paginação
   }
 }

@@ -1,52 +1,55 @@
-<section class="d-flex flex-column">
-  <div class="container pt-5 d-flex flex-column">
-    <div class="spinner-grow text-danger" role="status" *ngIf="estaCarregando">
-      <span class="visually-hidden">Loading...</span>
+<div class="m-3">
+  <h1 class="mb-3">Clientes</h1>
+
+  <div class="lds-ring" *ngIf="estaCarregando">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div *ngIf="erroNoCarregamento">
+    <h2>ERRO :(</h2>
+    <button (click)="carregarClientes()" ype="button" class="btn btn-secondary btn-lg">
+      Tentar novamente
+    </button>
+  </div>
+
+  <div *ngIf="!estaCarregando && !erroNoCarregamento">
+    <div class="d-flex justify-content-between">
+      <button (click)="paginaAnterior()" [disabled]="pagina === 1" class="btn btn-outline-secondary mb-1">
+        << Anterior</button>
+          <span>Página Atual: {{ pagina }}</span>
+          <button (click)="proximaPagina()" class="btn btn-outline-secondary mb-1">Próxima >></button>
     </div>
 
-    <div *ngIf="erroNoCarregamento">
-      <h2>Ocorreu um erro! :(</h2>
-      <button
-        (click)="carregarClientes()"
-        ype="button"
-        class="btn btn-secondary btn-lg"
-      >
-        Tentar novamente
-      </button>
-    </div>
-
-    <div class="d-grind gap-2 col-2 mx-auto">
-      <button class="btn btn-success btn-sm m-2" (click)="novoCliente()">
-        NOVO CLIENTE
-      </button>
-    </div>
-
-    <div *ngIf="!estaCarregando && !erroNoCarregamento">
-      <table class="table">
-        <thead>
+    <div class="align-middle">
+      <table class="table text-center">
+        <thead class="thead-dark">
           <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>CPF</th>
-            <th>AÇÕES</th>
-          </tr>
-          <tr *ngFor="let cliente of clientes">
-            <td>{{ cliente.id }}</td>
-            <td>{{ cliente.name }}</td>
-            <td>{{ cliente.cpf }}</td>
-            <td>
-              <button
-                class="btn btn-primary btn-sm m-1"
-                (click)="verDetalhes(cliente.id)"
-              >
-                Ver Detalhes
-              </button>
-              <button class="btn btn-warning btn-sm m-1" (click)="editarCliente(cliente.id)">Editar Contato</button>
-              <button class="btn btn-danger btn-sm m-1" (click)="apagarCliente(cliente.id)">Deletar</button>
-            </td>
+            <th scope="col">ID</th>
+            <th scope="col">NOME</th>
+            <th scope="col">TELEFONE</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">CPF</th>
+            <th class=" justify-content-end"><div class="d-flex justify-content-end"><button class="btn btn-success" routerLink="/formulario-clientes" (click)="novoCliente()">Novo</button></div></th>
           </tr>
         </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <th class="" scope="row d-column">{{cliente.id}}</th>
+            <td class="text-start align-middle pl-5">{{cliente.name}}</td>
+            <td class="align-middle pl-5 pr-5">{{cliente.telefone}}</td>
+            <td class="text-start align-middle pl-5 pr-5">{{cliente.email}}</td>
+            <td class="align-middle">{{cliente.cpf}}</td>
+            <td class="d-flex align-middle justify-content-end">
+              <button class="btn btn-info ml-2 mr-2" (click)="verDetalhes(cliente.id)">Detalhes</button>
+              <button class="btn btn-warning ml-2 mr-2" (click)="editarCliente(cliente.id)">Editar</button>
+              <button class="btn btn-danger ml-2 mr-2" (click)="apagarCliente(cliente.id)">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
-</section>
+</div>
