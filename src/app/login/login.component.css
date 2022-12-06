@@ -124,3 +124,9 @@ span {
     width: 80%;
   }
 }
+
+.nav-item-sair{
+  position: fixed;
+}
+
+

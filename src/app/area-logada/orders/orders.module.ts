@@ -11,4 +11,6 @@ import { OrdersRoutingModule } from './orders-routing.module';
     OrdersRoutingModule
   ]
 })
-export class OrdersModule { }
+export class OrdersModule {
+
+ }
