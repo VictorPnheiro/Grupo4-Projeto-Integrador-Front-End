@@ -112,7 +112,7 @@ Plataforma para gerenciamento de negócio e fluxo de caixa do lojista.
 <hr>
 
 * ✔️ PÁGINA CLIENTES.
-![image](https://user-images.githubusercontent.com/95944401/206018385-454cc290-52f2-4ddb-83cb-539a0e7a6b0e.png)
+![image](https://user-images.githubusercontent.com/95944401/206030465-23011df9-520b-4459-b718-456403fe290f.png)
 
 * ✔️ CLIENTES: CADASTRO
 ![image](https://user-images.githubusercontent.com/95944401/206028465-1d65d8d0-e7ec-41c1-b5b3-61840a16bd08.png)
@@ -124,7 +124,7 @@ Plataforma para gerenciamento de negócio e fluxo de caixa do lojista.
 <hr>
 
 * ✔️ PÁGINA PRODUTOS.
-![image](https://user-images.githubusercontent.com/95944401/206018602-b19240dc-baf3-424a-ac9f-9b0f99a9a9b5.png)
+![image](https://user-images.githubusercontent.com/95944401/206030541-83354952-c5ae-4bca-a95d-cd3560d49622.png)
 * ✔️ PRODUTOS CADASTRAR. 
 ![image](https://user-images.githubusercontent.com/95944401/206029063-d9409635-397a-4ae4-9e29-d7cfc7cce85b.png)
 * ✔️ PRODUTOS DETALHES.
