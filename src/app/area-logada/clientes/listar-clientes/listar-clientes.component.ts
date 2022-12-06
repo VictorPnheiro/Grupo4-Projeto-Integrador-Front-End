@@ -1,7 +1,7 @@
 import { ClientesService } from './../clientes.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { onErrorResumeNext, finalize, take } from 'rxjs';
+import { finalize, take, delay } from 'rxjs';
 import { Cliente } from '../clientes.interface';
 
 @Component({

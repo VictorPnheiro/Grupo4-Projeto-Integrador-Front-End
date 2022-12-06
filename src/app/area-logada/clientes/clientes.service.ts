@@ -15,8 +15,8 @@ export class ClientesService {
     return this.http.get<Cliente[]>(`${this.API_URL}/users`);
   }
 
-  getClientePorId(idContato: any) {
-    return this.http.get<Cliente>(`${this.API_URL}/users/${idContato}`);
+  getClientePorId(idCliente: any) {
+    return this.http.get<Cliente>(`${this.API_URL}/users/${idCliente}`);
   }
 
   criarCliente(cliente: Cliente) {
