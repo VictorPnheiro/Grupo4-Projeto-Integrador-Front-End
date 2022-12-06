@@ -1,1 +1,87 @@
-<h1>teste</h1>
+<!-- Container Cards -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Card Clientes -->
+    <div class="col-xl-4 col-md-6 mb-4 mt-5">
+      <div class="card shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col ml-2">
+              <div class="text-uppercase mb-1 text-card">
+                Clientes</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">200</div>
+            </div>
+            <div class="col-auto">
+              <img class="card-img" src="../../../assets/img/card-clientes.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Card Produtos -->
+    <div class="col-xl-4 col-md-6 mb-4 mt-5">
+      <div class="card shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col ml-2">
+              <div class="text-uppercase mb-1 text-card">
+                Produtos</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">300</div>
+            </div>
+            <div class="col-auto">
+              <img class="card-img" src="../../../assets/img/card-produto.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Card Pedidos -->
+    <div class="col-xl-4 col-md-6 mb-4 mt-5">
+      <div class="card shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col ml-2">
+              <div class="text-uppercase mb-1 text-card">
+                Pedidos</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">400</div>
+            </div>
+            <div class="col-auto">
+              <img class="card-img" src="../../../assets/img/card-pedido.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+    <!-- Area Chart -->
+    <div class="col-xl-8 col-lg-7">
+      <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Relatório de Vendas - Prospecção x Real</h6>
+        </div>
+        <!-- Card Body -->
+
+        <div class="divChart">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="col-xl-4 col-lg-5">
+      <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Relatório Mensal - Categorias</h6>
+        </div>
+        <!-- Card Body -->
+        <div class="divChart">
+          <canvas id="myChartPie"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
