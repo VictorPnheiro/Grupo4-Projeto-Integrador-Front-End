@@ -57,11 +57,11 @@ export class ListarClientesComponent implements OnInit {
     this.router.navigate([`clientes/${idContato}`]);
   }
 
-  editarCliente(idCliente: Number) {
+  editarCliente(idCliente: any) {
     this.router.navigate([`clientes/${idCliente}/editar`]);
   }
 
-  apagarCliente(idCliente: Number) {
+  apagarCliente(idCliente: any) {
     this.clientesService
       .apagarCliente(idCliente)
       .subscribe({
@@ -70,7 +70,7 @@ export class ListarClientesComponent implements OnInit {
       });
   }
 
-  onSucessoApagarCliente(idCliente: Number){
+  onSucessoApagarCliente(idCliente: any){
     this.clientes = this.clientes?.filter((clientes) => clientes.id != idCliente)
     alert('Cliente deletado com sucesso!')
   }

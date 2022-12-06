@@ -59,11 +59,11 @@ export class ListarProdutosComponent implements OnInit {
     this.router.navigate([`products/${idProduct}`])
   }
 
-  editarProduto(idProduct: Number){
+  editarProduto(idProduct: String){
     this.router.navigate([`products/${idProduct}/editar`])
   }
 
-  apagarProduto(idProduct: Number){
+  apagarProduto(idProduct: String){
     this.productsService
       .apagarProduto(idProduct)
       .subscribe({
@@ -72,7 +72,7 @@ export class ListarProdutosComponent implements OnInit {
       });
   }
   
-  onSucessoApagarProduto(idProduct: Number){
+  onSucessoApagarProduto(idProduct: String){
     this.products = this.products?.filter((products) => products.id != idProduct)
     alert('Produto deletado com sucesso')
   }

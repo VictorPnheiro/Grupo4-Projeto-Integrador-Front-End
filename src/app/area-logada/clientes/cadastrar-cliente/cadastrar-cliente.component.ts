@@ -35,10 +35,9 @@ export class CadastrarClienteComponent implements OnInit {
 
   inicializaForm() {
     this.clienteForm = this.formBuilder.group({
-      id: ['', Validators.required],
       name: ['', Validators.required],
       telefone: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       cpf: ['', Validators.required],
       cep: ['', Validators.required],
       logradouro: ['', Validators.required],
@@ -146,6 +145,6 @@ export class CadastrarClienteComponent implements OnInit {
   }
 
   voltar() {
-    this.router.navigate(['clientes'])
+    this.router.navigate(['clientes']);
   }
 }

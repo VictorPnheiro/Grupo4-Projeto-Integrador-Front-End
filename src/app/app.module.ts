@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DetalhesProdutoComponent } from './area-logada/products/detalhes-produto/detalhes-produto.component';
 import { ListarProdutosComponent } from './area-logada/products/listar-produtos/listar-produtos.component';
@@ -24,7 +25,7 @@ registerLocaleData(ptBr);
     DetalhesProdutoComponent,
     ListarProdutosComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, SharedModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
