@@ -9,10 +9,8 @@
         <img src="../../assets/img/logo.svg" alt="" />
       </div>
     </a>
-
     <!-- Divider -->
     <hr class="sidebar-divider my-0" />
-
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
       <a class="nav-link" routerLinkActive="ativado" routerLink="home">
@@ -20,12 +18,9 @@
         <span>Home</span></a
       >
     </li>
-
     <hr class="sidebar-divider my-0" />
-
     <!-- Heading -->
     <div class="sidebar-heading mt-2">Menu</div>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="ativado" routerLink="clientes">
@@ -33,7 +28,6 @@
         <span>Clientes</span></a
       >
     </li>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="ativado" routerLink="products">
@@ -41,7 +35,6 @@
         <span>Produtos</span></a
       >
     </li>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="ativado" routerLink="orders">
@@ -49,7 +42,6 @@
         <span>Pedidos</span></a
       >
     </li>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a
@@ -62,10 +54,11 @@
       >
     </li>
 
-    <li class="nav-item-sair">
-      <a class="nav-link text-center mt-6" id="sair" href="/login">Sair</a>
+    <li class="nav-item sair">
+      <a class="nav-link text-center mt-6" id="sair" (click)="logout()">Sair</a>
     </li>
   </ul>
+
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
       <div class="container-fluid">
