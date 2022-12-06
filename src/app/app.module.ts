@@ -1,3 +1,4 @@
+// import { OrdersComponent } from './area-logada/orders/orders.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DetalhesProdutoComponent } from './area-logada/products/detalhes-produto/detalhes-produto.component';
@@ -13,6 +14,8 @@ import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { ListarClientesComponent } from './area-logada/clientes/listar-clientes/listar-clientes.component';
 import { DetalhesClienteComponent } from './area-logada/clientes/detalhes-cliente/detalhes-cliente.component';
+import { OrdersComponent } from './area-logada/orders/orders.component';
+
 
 registerLocaleData(ptBr);
 
@@ -23,7 +26,8 @@ registerLocaleData(ptBr);
     ListarClientesComponent,
     DetalhesClienteComponent,
     DetalhesProdutoComponent,
-    ListarProdutosComponent
+    ListarProdutosComponent,
+    OrdersComponent
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, SharedModule],
   providers: [
