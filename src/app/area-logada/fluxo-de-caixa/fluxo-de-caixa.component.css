@@ -3,3 +3,11 @@
 .table th {
   vertical-align: middle;
 }
+
+.verde {
+  background-color: green;
+}
+
+.vermelho {
+  background-color: red;
+}

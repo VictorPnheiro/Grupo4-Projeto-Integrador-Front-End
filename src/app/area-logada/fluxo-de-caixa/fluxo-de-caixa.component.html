@@ -1,5 +1,6 @@
 <div class="m-3">
   <h1 class="mb-3">Fluxo de Caixa</h1>
+  <h2 class="text-center m-3">JANEIRO</h2>
 
   <div>
     <div class="align-middle">
@@ -14,12 +15,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th class="" scope="row d-column">01/12/2022</th>
-            <td class="align-middle">R$ 1000.00</td>
-            <td class="align-middle">R$ 2500.00</td>
-            <td class="align-middle">R$ 11000.00</td>
-            <td class="align-middle">R$ 7500.00</td>
+          <tr *ngFor="let fluxoDia of FLUXO_DE_CAIXA_MENSAL">
+            <th class="" scope="row d-column">{{fluxoDia.dia}}</th>
+            <td class="align-middle">R$ {{fluxoDia.receita}}</td>
+            <td class="align-middle">R$ {{fluxoDia.despesa}}</td>
+            <td class="align-middle">R$ {{fluxoDia.resultadoEsperado}}</td>
+            <td class="align-middle">R$ {{fluxoDia.resultadoReal}}</td>
           </tr>
         </tbody>
       </table>
