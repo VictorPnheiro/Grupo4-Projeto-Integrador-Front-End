@@ -29,7 +29,7 @@ export class CadastrarProdutoComponent implements OnInit{
 
      this.idProduct = this.activatedRoute.snapshot.paramMap.get('id');
      if(this.idProduct){
-      this.carregarProduto();
+      this.carregarProdutos();
      }
     }
 
@@ -45,7 +45,18 @@ export class CadastrarProdutoComponent implements OnInit{
 
     alterandoProduto = () => Boolean(this.idProduct);
 
-    carregarProduto(){
+    exibeErro(nomeControle: string) {
+      if (!this.productForm.get(nomeControle)) {
+        return false;
+      }
+  
+      return (
+        this.productForm.controls[nomeControle].invalid &&
+        this.productForm.controls[nomeControle].touched
+      );
+    }
+
+    carregarProdutos(){
       this.estaCarregando = true;
       this.erroNoCarregamento = false;
 
@@ -58,16 +69,16 @@ export class CadastrarProdutoComponent implements OnInit{
           finalize(() => (this.estaCarregando = false))
         )
         .subscribe({
-          next:(resposta: Product) => this.onSucessoCarregarProduto(resposta),
-          error:(erro) => this.onErroCarregarProduto(erro),
+          next:(resposta: Product) => this.onSucessoCarregarProdutoscarregarProdutos(resposta),
+          error:(erro) => this.onErroCarregarProdutoscarregarProdutos(erro),
         });
       }   
 
-    onSucessoCarregarProduto(resposta: Product){
+    onSucessoCarregarProdutoscarregarProdutos(resposta: Product){
       this.productForm.patchValue(resposta);
     }
 
-    onErroCarregarProduto(erro: any){
+    onErroCarregarProdutoscarregarProdutos(erro: any){
       this.erroNoCarregamento = true;
       console.log(erro)
     }
@@ -124,5 +135,9 @@ export class CadastrarProdutoComponent implements OnInit{
   onErroCadastrarProduto(){
     alert('Ocorreu um erro ao cadastrar o produto!');
   };
+
+  voltar() {
+    this.router.navigate(['products'])
+  }
 }
 

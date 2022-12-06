@@ -24,10 +24,10 @@ export class DetalhesClienteComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.carregarContato();
+    this.carregarCliente();
   }
 
-  carregarContato() {
+  carregarCliente() {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
 

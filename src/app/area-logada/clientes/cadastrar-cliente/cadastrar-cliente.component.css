@@ -1,5 +1,48 @@
+/* Spinner Carregamento */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #f14600;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #f14600 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Component CSS */
+
 span {
   color: #ff4600;
+}
+
+input::placeholder {
+  align-items: center;
 }
 
 form {
@@ -13,14 +56,17 @@ h1 {
 }
 
 button {
-  background: linear-gradient(#19EA19, #0AD10A);
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 12px 15px;
   font-weight: 600;
   color: #133700;
   transition: 0.3s;
-  width: 250px;
+  width: 200px;
   border-radius: 5px;
+}
+
+.btn-cadastrar {
+  background: linear-gradient(#19EA19, #0AD10A);
 }
 
 input,
@@ -29,9 +75,7 @@ select {
 }
 
 button:hover {
-  background-color: green;
-  font-size: 1.75rem;
-  padding: 9px 15px;
+  font-weight: 700;
 }
 
 input:focus,

@@ -1,11 +1,8 @@
 <div class="m-3">
   <h1 class="mb-3 p-3">Novo Cliente</h1>
 
-  <div class="lds-ring" *ngIf="estaCarregando">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div class="spinner-grow text-danger" role="status" *ngIf="estaCarregando">
+    <span class="visually-hidden">Loading...</span>
   </div>
 
   <div *ngIf="erroNoCarregamento">
@@ -25,12 +22,12 @@
       <div class="form-row">
         <!-- Nome-->
         <div class="form-group col-md-6">
-          <label for="name">Nome Completo <span>*</span></label>
+          <label for="name">Nome Completo<span>*</span></label>
           <input type="text" class="form-control" id="nome" placeholder="Nome Completo" formControlName="name" [class.is-invalid]="exibeErro('name')">
         </div>
         <!-- CPF-->
         <div class="form-group col-md-6">
-          <label for="cpf">CPF <span>*</span></label>
+          <label for="cpf">CPF<span>*</span></label>
           <input type="number" class="form-control" id="cpf" placeholder="XXX.XXX.XXX-XX" formControlName="cpf" [class.is-invalid]="exibeErro('cpf')">
         </div>
       </div>
@@ -42,12 +39,12 @@
       <!-- Telefone -->
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="telefone">Telefone <span>*</span></label>
+          <label for="telefone">Telefone<span>*</span></label>
           <input type="number" class="form-control" id="telefone" placeholder="(XX) XXXXX-XXXX" formControlName="telefone" [class.is-invalid]="exibeErro('telefone')">
         </div>
         <!-- CEP -->
         <div class="form-group col-md-6">
-          <label for="cep">CEP <span>*</span></label>
+          <label for="cep">CEP<span>*</span></label>
           <input class="form-control" id="cep" type="number" placeholder="XXXXX-XXX" formControlName="cep" [class.is-invalid]="exibeErro('cep')">
         </div>
       </div>
@@ -66,7 +63,7 @@
       <div class="form-row">
         <!-- Bairro -->
         <div class="form-group col-md-8">
-          <label for="inputAddress2">Bairro <span>*</span></label>
+          <label for="inputAddress2">Bairro<span>*</span></label>
           <input class="form-control" id="bairro" type="text" placeholder="Bairro" formControlName="bairro" [class.is-invalid]="exibeErro('bairro')">
         </div>
         <!-- Complemento -->
@@ -78,12 +75,12 @@
       <div class="form-row">
         <!-- Cidade -->
         <div class="form-group col-md-8">
-          <label for="inputCity">Cidade <span>*</span></label>
+          <label for="inputCity">Cidade<span>*</span></label>
           <input class="form-control" id="cidade" type="text" placeholder="Cidade" formControlName="cidade" [class.is-invalid]="exibeErro('cidade')">
         </div>
         <div class="form-group col-md-4">
           <!-- Estado -->
-          <label for="inputEstado">Estado <span>*</span></label>
+          <label for="inputEstado">Estado<span>*</span></label>
           <select class="form-control" id="estado" type="text" placeholder="Estado" formControlName="estado" [class.is-invalid]="exibeErro('estado')">
             <option selected>Escolher...</option>
             <option>Acre</option>
@@ -115,8 +112,9 @@
           </select>
         </div>
       </div>
-      <button class="btn btn-success mt-2" (click)="onSubmit()">
+      <button class="btn btn-cadastrar mt-2" (click)="onSubmit()">
         {{ estaAlterando() ? "Atualizar Cliente" : "Cadastrar Cliente" }}</button>
+      <button class="btn btn-secondary mt-2 ml-3" (click)="voltar()">Voltar</button>
     </form>
   </div>
 </div>

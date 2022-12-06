@@ -17,7 +17,7 @@ import { DetalhesClienteComponent } from './area-logada/clientes/detalhes-client
 registerLocaleData(ptBr);
 
 @NgModule({
-  declarations: [AppComponent, NaoEncontradoComponent, ListarClientesComponent, DetalhesClienteComponent, DetalhesProdutoComponent],
+  declarations: [AppComponent, NaoEncontradoComponent, ListarClientesComponent,ListarProdutosComponent, DetalhesClienteComponent, DetalhesProdutoComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },

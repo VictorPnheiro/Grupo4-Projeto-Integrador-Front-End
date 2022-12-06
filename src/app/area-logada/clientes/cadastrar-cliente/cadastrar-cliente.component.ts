@@ -144,4 +144,8 @@ export class CadastrarClienteComponent implements OnInit {
   onErroCriarContato() {
     alert('Ocorreu um erro ao cadastrar o cliente!');
   }
+
+  voltar() {
+    this.router.navigate(['clientes'])
+  }
 }

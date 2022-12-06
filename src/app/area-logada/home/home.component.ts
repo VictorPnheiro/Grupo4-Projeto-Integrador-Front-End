@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { Cliente } from '../clientes/clientes.interface';
+import { ClientesService } from '../clientes/clientes.service';
+import { Product } from '../products/product.interface';
+import { ProductsService } from '../products/products.service';
 Chart.register(...registerables);
 
 
@@ -10,12 +14,22 @@ Chart.register(...registerables);
 })
 export class HomeComponent implements OnInit {
 
+  qntClients: number;
+  qntProducts: number;
+
   prospeccao = [50, 60 ,80 ,70, 100, 150, 200, 210, 220, 250, 300, 350];
   real = [55, 66 ,88 ,77, 120, 170, 230, 240, 250, 260, 310, 300]
 
-  constructor() { }
+  constructor(
+    private clienteService: ClientesService,
+    private productService: ProductsService
+  ) { }
 
   ngOnInit(): void {
+
+    this.countClients();
+    this.countProducts();
+
     var myChart = new Chart("myChart", {
       type: 'line',
       data: {
@@ -60,5 +74,25 @@ export class HomeComponent implements OnInit {
         },
       }
     });
+  }
+
+  countClients() {
+    this.clienteService.getClientes().subscribe({
+      next: (resp) => this.onSuccessClients(resp),
+    });
+  }
+
+  onSuccessClients(resp: Cliente[]) {
+    this.qntClients = resp.length;
+  }
+
+  countProducts() {
+    this.productService.pegarProduto().subscribe({
+      next: (resp) => this.onSuccessProducts(resp),
+    });
+  }
+
+  onSuccessProducts(resp: Product[]) {
+    this.qntProducts = resp.length;
   }
   }

@@ -15,10 +15,24 @@ ul span {
 
 .ativado {
   color: #000;
-  background-color: #ff5510;
+  background: linear-gradient(#ff7e49, #f14600);
   font-weight: 600;
 }
 
 .ativado span {
   font-weight: 700;
+}
+
+.btn-sair {
+  padding-top: 100px;
+}
+
+li a:hover {
+  background: linear-gradient(#ff7e49, #f14600);
+  font-weight: 600;
+}
+
+.sair {
+  position: absolute;
+  bottom: 0;
 }

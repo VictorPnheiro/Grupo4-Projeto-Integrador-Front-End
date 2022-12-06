@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../products.service';
 import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { take, finalize } from 'rxjs';
 import { Product } from '../product.interface';
-import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-listar-produtos',
@@ -11,6 +11,8 @@ import { ProductsService } from '../products.service';
 })
 export class ListarProdutosComponent implements OnInit {
   products: Array<Product>;
+
+  pagina = 1;
 
   estaCarregando: boolean;
   erroNoCarregamento: boolean;
@@ -21,10 +23,10 @@ export class ListarProdutosComponent implements OnInit {
   ) {}
 
   ngOnInit(){
-    this.carregarProduto();
+    this.carregarProdutos();
   }
 
-  carregarProduto(){
+  carregarProdutos(){
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
 
@@ -77,6 +79,16 @@ export class ListarProdutosComponent implements OnInit {
 
   onErroApagarProduto(){
     alert('Ocorreu um erro ao tentar deletar produto!')
+  }
+
+  proximaPagina() {
+    this.pagina = this.pagina + 1;
+    // implementar lógica de paginação
+  }
+
+  paginaAnterior() {
+    this.pagina = this.pagina - 1;
+    // implementar lógica de paginação
   }
 
 }

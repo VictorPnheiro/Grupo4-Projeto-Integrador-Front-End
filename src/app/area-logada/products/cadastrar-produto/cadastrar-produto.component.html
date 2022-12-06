@@ -1,89 +1,51 @@
-<!-- Tela de Carregamento | Validação -->
+<div class="m-3">
+  <h1 class="mb-3 p-3">Novo Produto</h1>
 
-<section class="d-flex flex-column">
-  <div class="container pt-5 d-flex flex-column">
-    <div class="text-center" *ngIf="estaCarregando">
-      <div class="spinner-grow text-danger" role="status">
-        <span class="visually-hidden">Loading...</span>
+  <div class="spinner-grow text-danger" role="status" *ngIf="estaCarregando">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+  <div *ngIf="erroNoCarregamento">
+    <h2>ERRO :(</h2>
+    <button (click)="carregarProdutos()" type="button" class="btn btn-secondary btn-lg">
+      Tentar novamente
+    </button>
+  </div>
+
+  <div *ngIf="!estaCarregando && !erroNoCarregamento" class="m-3">
+    <form [formGroup]="productForm" class="container pl-4 pr-4 ml-4 mr-4">
+      <!-- input ID -->
+      <div class="form-group col-3 pl-0">
+        <label for="id">ID Produto<span>*</span></label>
+        <input type="number" class="form-control" id="id" placeholder="ID Produto" formControlName="id" [class.is-invalid]="exibeErro('id')">
       </div>
-    </div>
-    <div *ngIf="erroNoCarregamento">
-      <h2>Ocorreu um erro! :(</h2>
-      <button
-        (click)="carregarProduto()"
-        type="button"
-        class="btn btn-secondary btn-lg"
-      >
-        Tentar Novamente
-      </button>
-    </div>
-    <div *ngIf="!estaCarregando && !erroNoCarregamento"></div>
-
-    <!--  ID  -->
-    <form [formGroup]="productForm">
-      <div class="mb-3 form-group">
-        <label for="id">ID</label>
-        <input
-          class="form-control"
-          id="id"
-          type="number"
-          placeholder="ID"
-          formControlName="id"
-        />
+      <div class="form-row">
+        <!-- Nome-->
+        <div class="form-group col-md-6">
+          <label for="name">Nome do Produto<span>*</span></label>
+          <input type="text" class="form-control" id="nome" placeholder="Nome do Produto" formControlName="name" [class.is-invalid]="exibeErro('name')">
+        </div>
+        <!-- Valor-->
+        <div class="form-group col-md-6">
+          <label for="valor">Valor<span>*</span></label>
+          <input type="number" class="form-control" id="price" placeholder="R$ 0.00" formControlName="price" [class.is-invalid]="exibeErro('price')">
+        </div>
       </div>
-
-      <!--  NOME  -->
-      <div class="mb-3 form-group">
-        <label for="name">Nome do produto</label>
-        <input
-          class="form-control"
-          id="name"
-          type="text"
-          placeholder="Digite o nome do produto"
-          formControlName="name"
-        />
+      <!-- Descrição -->
+      <div class="form-group">
+        <label for="description">Descrição<span>*</span></label>
+        <input type="text" class="form-control" id="description" placeholder="Descrição" formControlName="description" [class.is-invalid]="exibeErro('description')">
       </div>
-
-      <!--DESCRIÇÃO-->
-      <div class="mb-3 form-group">
-        <label for="description">Descrição</label>
-        <input
-          class="form-control"
-          id="description"
-          type="text"
-          placeholder="Digite uma descrição"
-          formControlName="description"
-        />
+      <!-- Estoque -->
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="quantity">Quantidade em Estoque<span>*</span></label>
+          <input type="number" class="form-control" id="quantity" placeholder="XXX" formControlName="quantity" [class.is-invalid]="exibeErro('quantity')">
+        </div>
       </div>
-
-      <!--VALOR -->
-      <div class="mb-3 form-group">
-        <label for="price">Valor</label>
-        <input
-          class="form-control"
-          id="price"
-          type="number"
-          placeholder="Digite valor do produto"
-          formControlName="price"
-        />
-      </div>
-
-      <!--QTD ESTOQUE-->
-      <div class="mb-3 form-group">
-        <label for="quantity">Quantidade em Estoque</label>
-        <input
-          class="form-control"
-          id="quantity"
-          type="number"
-          placeholder="Quantidade de produtos em estoque"
-          formControlName="quantity"
-        />
-      </div>
-
-      <!-- Botão -->
-      <button class="btn btn-success" (click)="onSubmit()">
-        {{ alterandoProduto() ? "Salvar Produto" : "Cadastrar Produto" }}
-      </button>
+      <button class="btn btn-cadastrar mt-2" (click)="onSubmit()">
+        {{ alterandoProduto() ? "Atualizar Produto" : "Cadastrar Produto" }}</button>
+      <button class="btn btn-secondary mt-2 ml-3" (click)="voltar()">Voltar</button>
     </form>
   </div>
-</section>
+</div>
