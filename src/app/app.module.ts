@@ -13,11 +13,17 @@ import ptBr from '@angular/common/locales/pt';
 import { ListarClientesComponent } from './area-logada/clientes/listar-clientes/listar-clientes.component';
 import { DetalhesClienteComponent } from './area-logada/clientes/detalhes-cliente/detalhes-cliente.component';
 
-
 registerLocaleData(ptBr);
 
 @NgModule({
-  declarations: [AppComponent, NaoEncontradoComponent, ListarClientesComponent, DetalhesClienteComponent, DetalhesProdutoComponent],
+  declarations: [
+    AppComponent,
+    NaoEncontradoComponent,
+    ListarClientesComponent,
+    DetalhesClienteComponent,
+    DetalhesProdutoComponent,
+    ListarProdutosComponent
+  ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
