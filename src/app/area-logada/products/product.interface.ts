@@ -1,7 +1,7 @@
 export interface Product {
-    id: Number,
+    id: String,
     name: String,
     description: String,
-    price: Number,
+    price: number,
     quantity: Number,
 }

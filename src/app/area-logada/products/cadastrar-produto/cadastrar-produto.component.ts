@@ -35,7 +35,6 @@ export class CadastrarProdutoComponent implements OnInit{
 
     inicializaForm(){
       this.productForm = this.formBuilder.group({
-        id:['', Validators.required],
         name:['', Validators.required],
         description:['',Validators.required],
         price:['',Validators.required],

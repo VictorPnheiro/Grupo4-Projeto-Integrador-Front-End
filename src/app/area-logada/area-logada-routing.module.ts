@@ -38,6 +38,13 @@ const routes: Routes = [
             (m) => m.FluxoDeCaixaModule
           ),
       },
+      {
+        path: 'orders',
+        loadChildren: () =>
+          import('./orders/orders.module').then(
+            (m) => m.OrdersModule
+          )
+      },
     ],
   },
 ];

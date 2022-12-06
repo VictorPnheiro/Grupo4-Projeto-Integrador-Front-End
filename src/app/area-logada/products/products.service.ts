@@ -16,7 +16,7 @@ export class ProductsService {
   }
 
   pegarProdutoId(idProduct: any){
-    return this.http.get<Product>(`${this.API_URL}/products/${Number(idProduct)}`);
+    return this.http.get<Product>(`${this.API_URL}/products/${idProduct} `);
   }
 
   cadastrarProduto(product:Product){
@@ -27,7 +27,7 @@ export class ProductsService {
     return this.http.put<Product>(`${this.API_URL}/products/${idProduct}`, product);
   }
 
-  apagarProduto(idProduct: Number){
+  apagarProduto(idProduct: String){
     return this.http.delete<Product[]>(`${this.API_URL}/products/${idProduct}`);
     // return this.http.delete<Product[]>(`${this.API_URL}products/${idProduct}`);
   }

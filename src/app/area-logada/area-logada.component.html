@@ -1,56 +1,64 @@
 <div id="wrapper">
   <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center m-3" routerLink="/">
-      <div class="sidebar-brand-text mx-3"><img src="../../assets/img/logo.svg" alt=""></div>
+    <a
+      class="sidebar-brand d-flex align-items-center justify-content-center m-3"
+      routerLink="/"
+    >
+      <div class="sidebar-brand-text mx-3">
+        <img src="../../assets/img/logo.svg" alt="" />
+      </div>
     </a>
-
     <!-- Divider -->
     <hr class="sidebar-divider my-0" />
-
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
       <a class="nav-link" routerLinkActive="ativado" routerLink="home">
-        <img width="20" class="mr-2" src="../../assets/icons/home.png" alt="">
-        <span>Home</span></a>
+        <img width="20" class="mr-2" src="../../assets/icons/home.png" alt="" />
+        <span>Home</span></a
+      >
     </li>
-
-    <hr class="sidebar-divider my-0">
-
+    <hr class="sidebar-divider my-0" />
     <!-- Heading -->
     <div class="sidebar-heading mt-2">Menu</div>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="ativado" routerLink="clientes">
-        <img class="mr-2" src="../../assets/icons/clientes.svg" alt="">
-        <span>Clientes</span></a>
+        <img class="mr-2" src="../../assets/icons/clientes.svg" alt="" />
+        <span>Clientes</span></a
+      >
     </li>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
       <a class="nav-link" routerLinkActive="ativado" routerLink="products">
-        <img class="mr-2" src="../../assets/icons/produto.svg" alt="">
-        <span>Produtos</span></a>
+        <img class="mr-2" src="../../assets/icons/produto.svg" alt="" />
+        <span>Produtos</span></a
+      >
     </li>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" routerLinkActive="ativado" routerLink="/about">
-        <img class="mr-2" src="../../assets/icons/pedido.svg" alt="">
-        <span>Pedidos</span></a>
+      <a class="nav-link" routerLinkActive="ativado" routerLink="orders">
+        <img class="mr-2" src="../../assets/icons/pedido.svg" alt="" />
+        <span>Pedidos</span></a
+      >
     </li>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" routerLinkActive="ativado" routerLink="fluxo-de-caixa">
-        <img class="mr-2" src="../../assets/icons/relatorio.svg" alt="">
-        <span>Fluxo de Caixa</span></a>
+      <a
+        class="nav-link"
+        routerLinkActive="ativado"
+        routerLink="fluxo-de-caixa"
+      >
+        <img class="mr-2" src="../../assets/icons/relatorio.svg" alt="" />
+        <span>Fluxo de Caixa</span></a
+      >
     </li>
 
-      <li class="nav-item sair"><a class="nav-link text-center mt-6" href="/login">Sair</a></li>
-
+    <li class="nav-item sair">
+      <a class="nav-link text-center mt-6" id="sair" (click)="logout()">Sair</a>
+    </li>
   </ul>
+
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
       <div class="container-fluid">

@@ -7,44 +7,80 @@
 
   <div *ngIf="erroNoCarregamento">
     <h2>ERRO :(</h2>
-    <button (click)="carregarProdutos()" type="button" class="btn btn-secondary btn-lg">
+    <button
+      (click)="carregarProdutos()"
+      type="button"
+      class="btn btn-secondary btn-lg"
+    >
       Tentar novamente
     </button>
   </div>
 
   <div *ngIf="!estaCarregando && !erroNoCarregamento">
     <div class="d-flex justify-content-between">
-      <button (click)="paginaAnterior()" [disabled]="pagina === 1" class="btn btn-outline-secondary mb-1">
-        << Anterior</button>
-          <span>Página Atual: {{ pagina }}</span>
-          <button (click)="proximaPagina()" class="btn btn-outline-secondary mb-1">Próxima >></button>
+      <button
+        (click)="paginaAnterior()"
+        [disabled]="pagina === 1"
+        class="btn btn-outline-secondary mb-1"
+      >
+        Anterior
+      </button>
+      <span>Página Atual: {{ pagina }}</span>
+      <button (click)="proximaPagina()" class="btn btn-outline-secondary mb-1">
+        Próxima >>
+      </button>
     </div>
 
     <div class="align-middle">
       <table class="table text-center">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">ID</th>
             <th scope="col">NOME</th>
             <th scope="col">DESCRIÇÃO</th>
             <th scope="col">VALOR</th>
             <th scope="col">ESTOQUE</th>
-            <th class=" justify-content-end pr-3">
-              <div class="d-flex justify-content-end"><button class="btn btn-success" routerLink="/formulario-produto" (click)="novoProduto()">Novo</button></div>
+            <th class="justify-content-end pr-3">
+              <div class="d-flex justify-content-end">
+                <button
+                  class="btn btn-success"
+                  routerLink="/formulario-produto"
+                  (click)="novoProduto()"
+                >
+                  Novo
+                </button>
+              </div>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let product of products">
-            <th class="" scope="row d-column">{{product.id}}</th>
-            <td class="text-start align-middle pl-5">{{product.name}}</td>
-            <td class="align-middle pl-5 pr-5">{{product.description}}</td>
-            <td class="text-start align-middle pl-5 pr-5">{{product.price}}</td>
-            <td class="align-middle">{{product.quantity}}</td>
+            <td class="text-start align-middle pl-5" scope="row d-column">
+              <b>{{ product.name }}</b>
+            </td>
+            <td class="align-middle pl-5 pr-5">{{ product.description }}</td>
+            <td class="text-start align-middle pl-5 pr-5">
+              {{ product.price | currency}}
+            </td>
+            <td class="align-middle">{{ product.quantity }}</td>
             <td class="d-flex align-middle justify-content-end">
-              <button class="btn btn-info ml-2 mr-2" (click)="verDetalhes(product.id)">Detalhes</button>
-              <button class="btn btn-warning ml-2 mr-2" (click)="editarProduto(product.id)">Editar</button>
-              <button class="btn btn-danger ml-2 mr-2" (click)="apagarProduto(product.id)">Excluir</button>
+              <button
+                class="btn btn-info ml-2 mr-2"
+                (click)="verDetalhes(product.id)"
+              >
+                Detalhes
+              </button>
+              <button
+                class="btn btn-warning ml-2 mr-2"
+                (click)="editarProduto(product.id)"
+              >
+                Editar
+              </button>
+              <button
+                class="btn btn-danger ml-2 mr-2"
+                (click)="apagarProduto(product.id)"
+              >
+                Excluir
+              </button>
             </td>
           </tr>
         </tbody>

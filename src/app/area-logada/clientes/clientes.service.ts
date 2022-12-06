@@ -16,7 +16,7 @@ export class ClientesService {
   }
 
   getClientePorId(idContato: any) {
-    return this.http.get<Cliente>(`${this.API_URL}/users/${Number(idContato)}`);
+    return this.http.get<Cliente>(`${this.API_URL}/users/${idContato}`);
   }
 
   criarCliente(cliente: Cliente) {
@@ -30,7 +30,7 @@ export class ClientesService {
     );
   }
 
-  apagarCliente(idCliente: Number) {
+  apagarCliente(idCliente: any) {
     return this.http.delete<Cliente[]>(`${this.API_URL}/users/${idCliente}`);
   }
 }
