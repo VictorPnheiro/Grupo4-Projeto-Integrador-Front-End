@@ -1,4 +1,4 @@
-# ProjetoFluxoDeCaixa
+# FRONT - PROJETO RADAR
 
 <div align="center"><h1> :computer: # Equipe: </h1><div>
 
