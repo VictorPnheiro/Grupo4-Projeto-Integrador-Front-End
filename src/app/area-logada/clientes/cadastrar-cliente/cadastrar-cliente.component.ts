@@ -29,7 +29,7 @@ export class CadastrarClienteComponent implements OnInit {
 
     this.idCliente = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.idCliente) {
-      this.carregarCliente();
+      this.carregarClientes();
     }
   }
 
@@ -63,7 +63,7 @@ export class CadastrarClienteComponent implements OnInit {
     );
   }
 
-  carregarCliente() {
+  carregarClientes() {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
 

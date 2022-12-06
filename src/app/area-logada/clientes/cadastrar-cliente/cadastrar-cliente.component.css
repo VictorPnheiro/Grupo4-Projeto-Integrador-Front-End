@@ -1,0 +1,41 @@
+span {
+  color: #ff4600;
+}
+
+form {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+button {
+  background: linear-gradient(#19EA19, #0AD10A);
+  font-size: 1.5rem;
+  padding: 12px 15px;
+  font-weight: 600;
+  color: #133700;
+  transition: 0.3s;
+  width: 250px;
+  border-radius: 5px;
+}
+
+input,
+select {
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: green;
+  font-size: 1.75rem;
+  padding: 9px 15px;
+}
+
+input:focus,
+select:focus{
+  box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border: solid 1.5px #000;
+}
