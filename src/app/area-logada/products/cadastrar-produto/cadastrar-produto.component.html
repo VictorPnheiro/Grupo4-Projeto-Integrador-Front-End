@@ -1,5 +1,5 @@
 <div class="m-3">
-  <h1 class="mb-3 p-3">Novo Produto</h1>
+  <h1 class="mb-3 p-3">{{ alterandoProduto() ? "Produto" : "Novo Produto" }}</h1>
 
   <div class="spinner-grow text-danger" role="status" *ngIf="estaCarregando">
     <span class="visually-hidden">Loading...</span>
@@ -7,11 +7,7 @@
 
   <div *ngIf="erroNoCarregamento">
     <h2>ERRO :(</h2>
-    <button
-      (click)="carregarProdutos()"
-      type="button"
-      class="btn btn-secondary btn-lg"
-    >
+    <button (click)="carregarProdutos()" type="button" class="btn btn-secondary btn-lg">
       Tentar novamente
     </button>
   </div>
@@ -22,52 +18,24 @@
         <!-- Nome-->
         <div class="form-group col-md-6">
           <label for="name">Nome do Produto<span>*</span></label>
-          <input
-            type="text"
-            class="form-control"
-            id="nome"
-            placeholder="Nome do Produto"
-            formControlName="name"
-            [class.is-invalid]="exibeErro('name')"
-          />
+          <input type="text" class="form-control" id="nome" placeholder="Nome do Produto" formControlName="name" [class.is-invalid]="exibeErro('name')" />
         </div>
         <!-- Valor-->
         <div class="form-group col-md-6">
           <label for="valor">Valor<span>*</span></label>
-          <input
-            type="number"
-            class="form-control"
-            id="price"
-            placeholder="R$ 0.00"
-            formControlName="price"
-            [class.is-invalid]="exibeErro('price')"
-          />
+          <input type="number" class="form-control" id="price" placeholder="R$ 0.00" formControlName="price" [class.is-invalid]="exibeErro('price')" />
         </div>
       </div>
       <!-- Descrição -->
       <div class="form-group">
         <label for="description">Descrição<span>*</span></label>
-        <input
-          type="text"
-          class="form-control"
-          id="description"
-          placeholder="Descrição"
-          formControlName="description"
-          [class.is-invalid]="exibeErro('description')"
-        />
+        <input type="text" class="form-control" id="description" placeholder="Descrição" formControlName="description" [class.is-invalid]="exibeErro('description')" />
       </div>
       <!-- Estoque -->
       <div class="form-row">
         <div class="form-group col-md-3">
           <label for="quantity">Quantidade em Estoque<span>*</span></label>
-          <input
-            type="number"
-            class="form-control"
-            id="quantity"
-            placeholder="XXX"
-            formControlName="quantity"
-            [class.is-invalid]="exibeErro('quantity')"
-          />
+          <input type="number" class="form-control" id="quantity" placeholder="XXX" formControlName="quantity" [class.is-invalid]="exibeErro('quantity')" />
         </div>
       </div>
       <button class="btn btn-cadastrar mt-2" (click)="onSubmit()">

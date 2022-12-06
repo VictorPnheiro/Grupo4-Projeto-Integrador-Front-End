@@ -1,5 +1,5 @@
 <div class="m-3">
-  <h1 class="mb-3 p-3">Novo Cliente</h1>
+  <h1 class="mb-3 p-3">{{ estaAlterando() ? "Cliente" : "Novo Cliente" }}</h1>
 
   <div class="spinner-grow text-danger" role="status" *ngIf="estaCarregando">
     <span class="visually-hidden">Loading...</span>
