@@ -33,6 +33,7 @@ export class ListarClientesComponent implements OnInit {
       .getClientes()
       .pipe(
         take(1),
+        delay(1000),
         finalize(() => (this.estaCarregando = false))
       )
       .subscribe({
@@ -62,21 +63,21 @@ export class ListarClientesComponent implements OnInit {
   }
 
   apagarCliente(idCliente: any) {
-    this.clientesService
-      .apagarCliente(idCliente)
-      .subscribe({
-        next: () => this.onSucessoApagarCliente(idCliente),
-        error: () => this.onErroApagarCliente(),
-      });
+    this.clientesService.apagarCliente(idCliente).subscribe({
+      next: () => this.onSucessoApagarCliente(idCliente),
+      error: () => this.onErroApagarCliente(),
+    });
   }
 
-  onSucessoApagarCliente(idCliente: any){
-    this.clientes = this.clientes?.filter((clientes) => clientes.id != idCliente)
-    alert('Cliente deletado com sucesso!')
+  onSucessoApagarCliente(idCliente: any) {
+    this.clientes = this.clientes?.filter(
+      (clientes) => clientes.id != idCliente
+    );
+    alert('Cliente deletado com sucesso!');
   }
 
-  onErroApagarCliente(){
-    alert('Ocorreu um erro ao tentar deletar cliente!')
+  onErroApagarCliente() {
+    alert('Ocorreu um erro ao tentar deletar cliente!');
   }
 
   proximaPagina() {
