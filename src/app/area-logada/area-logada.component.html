@@ -1,17 +1,8 @@
 <div id="wrapper">
-  <ul
-    class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-    id="accordionSidebar"
-  >
+  <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
-    <a
-      class="sidebar-brand d-flex align-items-center justify-content-center"
-      routerLink="/"
-    >
-      <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
-      </div>
-      <div class="sidebar-brand-text mx-3">Radar</div>
+    <a class="sidebar-brand d-flex align-items-center justify-content-center m-3" routerLink="/">
+      <div class="sidebar-brand-text mx-3"><img src="../../assets/img/logo.svg" alt=""></div>
     </a>
 
     <!-- Divider -->
@@ -19,56 +10,43 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-      <a class="nav-link" routerLink="/">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Home</span></a
-      >
+      <a class="nav-link" routerLinkActive="ativado" routerLink="/">
+        <img width="20" class="mr-2" src="../../assets/icons/home.png" alt="">
+        <span>Home</span></a>
     </li>
 
-    <hr class="sidebar-divider" />
+    <hr class="sidebar-divider my-0">
 
     <!-- Heading -->
-    <div class="sidebar-heading">Menu</div>
+    <div class="sidebar-heading mt-2">Menu</div>
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" routerLink="clientes">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Clientes</span></a
-      >
+      <a class="nav-link" routerLinkActive="ativado" routerLink="/clientes">
+        <img class="mr-2" src="../../assets/icons/clientes.svg" alt="">
+        <span>Clientes</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" routerLink="/products">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Produtos</span></a
-      >
+      <a class="nav-link" routerLinkActive="ativado" routerLink="products">
+        <img class="mr-2" src="../../assets/icons/produto.svg" alt="">
+        <span>Produtos</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" routerLink="/about">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Pedidos</span></a
-      >
+      <a class="nav-link" routerLinkActive="ativado" routerLink="/about">
+        <img class="mr-2" src="../../assets/icons/pedido.svg" alt="">
+        <span>Pedidos</span></a>
     </li>
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" routerLink="/about">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Relatório</span></a
-      >
+      <a class="nav-link" routerLinkActive="ativado" routerLink="/about">
+        <img class="mr-2" src="../../assets/icons/relatorio.svg" alt="">
+        <span>Relatório</span></a>
     </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block" />
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-      <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
   </ul>
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">

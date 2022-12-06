@@ -1,0 +1,24 @@
+#wrapper {
+  background-color: #000;
+}
+.nav-item span {
+  font-size: 1rem;
+}
+
+ul span {
+  color: #fff;
+}
+
+#content {
+  background-color: #f7f7f7;
+}
+
+.ativado {
+  color: #000;
+  background-color: #ff5510;
+  font-weight: 600;
+}
+
+.ativado span {
+  font-weight: 700;
+}

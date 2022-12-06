@@ -11,7 +11,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { ListarClientesComponent } from './area-logada/clientes/listar-clientes/listar-clientes.component';
-import { HttpClientModule } from '@angular/common/http';
 import { DetalhesClienteComponent } from './area-logada/clientes/detalhes-cliente/detalhes-cliente.component';
 
 
