@@ -1,7 +1,7 @@
 export interface FluxoDeCaixa {
-  id: Number,
+  dia: Number,
   receita: String,
   despesa: String,
-  resultadoEsperado: Number,
-  resultadoReal: Number,
+  resultadoEsperado: String,
+  resultadoReal: String,
 }

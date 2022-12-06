@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FluxoDeCaixa } from './fluxo-de-caixa.interface';
+import { FLUXO_DE_CAIXA_MENSAL } from './fluxo-de-caixa-constrants';
+
 
 @Component({
   selector: 'app-fluxo-de-caixa',
@@ -8,13 +9,11 @@ import { FluxoDeCaixa } from './fluxo-de-caixa.interface';
 })
 export class FluxoDeCaixaComponent implements OnInit {
 
-  constructor() { }
+  FLUXO_DE_CAIXA_MENSAL = FLUXO_DE_CAIXA_MENSAL;
 
-  fluxoDeCaixa: Array<FluxoDeCaixa>;
+  constructor() { }
 
   ngOnInit(): void {
   }
-
-  
 
 }

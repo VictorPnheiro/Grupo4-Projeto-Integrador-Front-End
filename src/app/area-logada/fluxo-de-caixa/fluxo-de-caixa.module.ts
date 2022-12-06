@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 
 import { FluxoDeCaixaRoutingModule } from './fluxo-de-caixa-routing.module';
 
-
 @NgModule({
   declarations: [FluxoDeCaixaComponent],
   imports: [
